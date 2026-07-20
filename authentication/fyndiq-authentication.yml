@@ -1,0 +1,13 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/fyndiq-merchant-api-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: Base64-encoded `merchantID:token`.
+  sources:
+  - openapi/fyndiq-merchant-api-openapi.yml
