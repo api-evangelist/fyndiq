@@ -1,0 +1,239 @@
+openapi: 3.0.3
+info:
+  title: Fyndiq Merchant Articles Orders API
+  version: v1
+  description: The Fyndiq Merchant API enables merchants to upload and manage products (articles) and to retrieve and fulfil orders on the Fyndiq marketplace, Sweden's largest marketplace for bargains. The API is REST-oriented, uses JSON request and response bodies, and is protected with HTTP Basic Authentication (Base64-encoded `merchantID:token`). A self-contained sandbox environment mirrors production for integration testing.
+  contact:
+    name: Fyndiq Merchant Help Center
+    url: https://support.fyndiq.se/hc/
+  x-provenance:
+    generated: '2026-07-19'
+    method: derived
+    source: https://merchantapi.fyndiq.com (public Postman collection 2328684/7185ENK)
+    note: Faithfully reconstructed from Fyndiq's published Merchant API Postman documentation. Schemas reflect the documented request/response examples; Fyndiq does not publish an OpenAPI document.
+servers:
+- url: https://merchants-api.fyndiq.se/api/v1
+  description: Production
+- url: https://merchants-api.sandbox.fyndiq.se/api/v1
+  description: Sandbox (credentials provided on request)
+security:
+- basicAuth: []
+tags:
+- name: Orders
+  description: Retrieve, fulfil and cancel marketplace orders.
+paths:
+  /orders:
+    get:
+      operationId: listOrders
+      tags:
+      - Orders
+      summary: List orders
+      description: Retrieve your order data. The `state` field supports filtering; by default new orders are returned.
+      parameters:
+      - name: state
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - CREATED
+          - FULFILLED
+          - CANCELLED
+        description: Filter orders by state.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order'
+    post:
+      operationId: createTestOrder
+      tags:
+      - Orders
+      summary: Create a test order
+      description: Create a test order in the sandbox. This endpoint is NOT available in the production environment.
+      responses:
+        '200':
+          description: Order was created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreatedResponse'
+  /orders/{order_id}:
+    parameters:
+    - name: order_id
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Fyndiq unique ID for the order.
+    get:
+      operationId: retrieveOrder
+      tags:
+      - Orders
+      summary: Retrieve an order
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+  /orders/{order_id}/fulfill:
+    parameters:
+    - name: order_id
+      in: path
+      required: true
+      schema:
+        type: string
+    put:
+      operationId: fulfillOrder
+      tags:
+      - Orders
+      summary: Fulfil an order
+      description: Mark the order as handled once you have shipped the item; include tracking information.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tracking_information:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/TrackingInformation'
+      responses:
+        '202':
+          description: Order row was fulfilled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+        '403':
+          description: Order cannot be fulfilled (already fulfilled/cancelled or past deadline)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+  /orders/{order_id}/cancel:
+    parameters:
+    - name: order_id
+      in: path
+      required: true
+      schema:
+        type: string
+    put:
+      operationId: cancelOrder
+      tags:
+      - Orders
+      summary: Cancel an order
+      description: Cancel an order when you are unable to ship the item (e.g. stock issue).
+      responses:
+        '202':
+          description: Order row was cancelled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+        '403':
+          description: Order cannot be cancelled (already fulfilled/cancelled)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+components:
+  schemas:
+    ShippingAddress:
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        street_address:
+          type: string
+        city:
+          type: string
+        postal_code:
+          type: string
+        country:
+          type: string
+        phone_number:
+          type: string
+    CreatedResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+          example: Article was created.
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+        article_id:
+          type: string
+        title:
+          type: string
+        article_sku:
+          type: string
+        price:
+          $ref: '#/components/schemas/OrderMoney'
+        total_price:
+          $ref: '#/components/schemas/OrderMoney'
+        quantity:
+          type: integer
+        shipping_address:
+          $ref: '#/components/schemas/ShippingAddress'
+        market:
+          type: string
+          example: SE
+        state:
+          type: string
+          example: CREATED
+        created_at:
+          type: string
+        updated_at:
+          type: string
+        fulfillment_deadline:
+          type: string
+        tracking_information:
+          type: array
+          items:
+            $ref: '#/components/schemas/TrackingInformation'
+    OrderMoney:
+      type: object
+      properties:
+        amount:
+          type: number
+        vat_amount:
+          type: number
+        vat_rate:
+          type: number
+        currency:
+          type: string
+          example: SEK
+    TrackingInformation:
+      type: object
+      properties:
+        carrier_name:
+          type: string
+          example: Postnord
+        tracking_number:
+          type: string
+    Message:
+      type: object
+      properties:
+        description:
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Base64-encoded `merchantID:token`.

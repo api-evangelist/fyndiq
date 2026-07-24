@@ -1,0 +1,484 @@
+openapi: 3.0.3
+info:
+  title: Fyndiq Merchant Articles API
+  version: v1
+  description: The Fyndiq Merchant API enables merchants to upload and manage products (articles) and to retrieve and fulfil orders on the Fyndiq marketplace, Sweden's largest marketplace for bargains. The API is REST-oriented, uses JSON request and response bodies, and is protected with HTTP Basic Authentication (Base64-encoded `merchantID:token`). A self-contained sandbox environment mirrors production for integration testing.
+  contact:
+    name: Fyndiq Merchant Help Center
+    url: https://support.fyndiq.se/hc/
+  x-provenance:
+    generated: '2026-07-19'
+    method: derived
+    source: https://merchantapi.fyndiq.com (public Postman collection 2328684/7185ENK)
+    note: Faithfully reconstructed from Fyndiq's published Merchant API Postman documentation. Schemas reflect the documented request/response examples; Fyndiq does not publish an OpenAPI document.
+servers:
+- url: https://merchants-api.fyndiq.se/api/v1
+  description: Production
+- url: https://merchants-api.sandbox.fyndiq.se/api/v1
+  description: Sandbox (credentials provided on request)
+security:
+- basicAuth: []
+tags:
+- name: Articles
+  description: Create, update, retrieve and delete product articles.
+paths:
+  /articles:
+    post:
+      operationId: createArticle
+      tags:
+      - Articles
+      summary: Create an article
+      description: Create a single article on the Fyndiq platform.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Article'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreatedResponse'
+        '400':
+          description: Invalid payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authorization credentials were incorrect
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: SKU already exists, cannot create article
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      operationId: listArticles
+      tags:
+      - Articles
+      summary: List articles
+      description: Retrieve the product data on your Fyndiq account. Responses are paginated; use the pagination query parameters to page through results (up to 1000 per page).
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 1000
+        description: Maximum number of articles to return per page.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Offset into the result set for pagination.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Article'
+  /articles/bulk:
+    post:
+      operationId: bulkCreateArticles
+      tags:
+      - Articles
+      summary: Bulk create articles
+      description: Create a batch of articles in one call. Up to 100 create requests per call.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Article'
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkResponse'
+        '400':
+          description: Invalid payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      operationId: bulkUpdateArticles
+      tags:
+      - Articles
+      summary: Bulk update articles
+      description: Update a batch of articles in one call. Up to 200 update requests per call.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkResponse'
+        '400':
+          description: Invalid payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /articles/{article_id}:
+    parameters:
+    - name: article_id
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Fyndiq unique ID for the article.
+    get:
+      operationId: retrieveArticle
+      tags:
+      - Articles
+      summary: Retrieve an article
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Article'
+        '403':
+          description: You do not have permission to access this object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      operationId: updateArticle
+      tags:
+      - Articles
+      summary: Update an article
+      description: Update one or several fields of an article.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Article'
+      responses:
+        '204':
+          description: Successful update
+        '400':
+          description: Invalid payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      operationId: deleteArticle
+      tags:
+      - Articles
+      summary: Delete an article
+      description: Set the article status to deleted; it will no longer be visible on Fyndiq.
+      responses:
+        '204':
+          description: Successful deletion
+  /articles/{article_id}/price:
+    parameters:
+    - name: article_id
+      in: path
+      required: true
+      schema:
+        type: string
+    put:
+      operationId: updateArticlePrice
+      tags:
+      - Articles
+      summary: Update an article price
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PriceList'
+      responses:
+        '204':
+          description: Successful update
+        '400':
+          description: Invalid payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /articles/{article_id}/quantity:
+    parameters:
+    - name: article_id
+      in: path
+      required: true
+      schema:
+        type: string
+    put:
+      operationId: updateArticleQuantity
+      tags:
+      - Articles
+      summary: Update an article quantity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quantity:
+                  type: integer
+      responses:
+        '204':
+          description: Successful update
+        '400':
+          description: Invalid payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Permission denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /articles/sku/{sku}:
+    parameters:
+    - name: sku
+      in: path
+      required: true
+      schema:
+        type: string
+      description: SKU for the article.
+    get:
+      operationId: retrieveArticleBySku
+      tags:
+      - Articles
+      summary: Retrieve an article by SKU
+      responses:
+        '200':
+          description: Article found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  description:
+                    type: string
+                  content:
+                    type: object
+                    properties:
+                      article:
+                        $ref: '#/components/schemas/Article'
+        '404':
+          description: Article not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /categories/{market}/{language}:
+    parameters:
+    - name: market
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Market code (e.g. SE).
+    - name: language
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Language code (e.g. sv, en).
+    get:
+      operationId: listCategories
+      tags:
+      - Articles
+      summary: List categories
+      description: Retrieve the Fyndiq category tree for the given market and language.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+components:
+  schemas:
+    BulkResponse:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Accepted
+        responses:
+          type: array
+          items:
+            type: object
+    CreatedResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+          example: Article was created.
+    Property:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+    Article:
+      type: object
+      properties:
+        id:
+          type: string
+        product_id:
+          type: string
+        sku:
+          type: string
+        parent_sku:
+          type: string
+        title:
+          type: array
+          items:
+            $ref: '#/components/schemas/LocalizedText'
+        description:
+          type: array
+          items:
+            $ref: '#/components/schemas/LocalizedText'
+        quantity:
+          type: integer
+        status:
+          type: string
+          example: for sale
+        fyndiq_status:
+          type: string
+          example: new
+        fyndiq_reasons:
+          type: array
+          items:
+            type: string
+        categories:
+          type: array
+          items:
+            type: string
+        properties:
+          type: array
+          items:
+            $ref: '#/components/schemas/Property'
+        brand:
+          type: string
+        gtin:
+          type: string
+        main_image:
+          type: string
+          format: uri
+        images:
+          type: array
+          items:
+            type: string
+            format: uri
+        markets:
+          type: array
+          items:
+            type: string
+        merchant_id:
+          type: string
+        price:
+          $ref: '#/components/schemas/PriceList'
+        original_price:
+          $ref: '#/components/schemas/PriceList'
+        shipping_time:
+          type: array
+          items:
+            $ref: '#/components/schemas/ShippingTime'
+    ShippingTime:
+      type: object
+      properties:
+        market:
+          type: string
+          example: SE
+        min:
+          type: integer
+        max:
+          type: integer
+    MarketPrice:
+      type: object
+      properties:
+        market:
+          type: string
+          example: SE
+        value:
+          $ref: '#/components/schemas/Money'
+    PriceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MarketPrice'
+    LocalizedText:
+      type: object
+      properties:
+        language:
+          type: string
+          example: en-US
+        value:
+          type: string
+    Money:
+      type: object
+      properties:
+        amount:
+          type: string
+          example: '50.00'
+        currency:
+          type: string
+          example: SEK
+    Error:
+      type: object
+      description: Standard Fyndiq error envelope. `errors` carries field-level detail.
+      properties:
+        description:
+          type: string
+        errors:
+          type: object
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Base64-encoded `merchantID:token`.
