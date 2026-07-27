@@ -1,21 +1,78 @@
 aid: fyndiq
 name: Fyndiq
-description: 'Fyndiq is a company surfaced as a portfolio company of northzone and added to the API Evangelist
-  network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  Fyndiq is Sweden's largest online marketplace for bargains and deals, connecting
+  merchants with millions of deal-seeking consumers across categories from
+  electronics and mobile accessories to home, fashion, beauty and children's
+  goods. Merchants list products while Fyndiq handles the storefront, customer
+  relations and payments. Fyndiq exposes a REST Merchant API that lets sellers
+  upload and manage product articles (create, bulk, price, quantity, delete) and
+  retrieve, fulfil and cancel orders. The API is JSON over HTTPS, secured with
+  HTTP Basic Authentication (Base64 merchantID:token), with a self-contained
+  sandbox environment for integration testing and official Magento, PrestaShop
+  and WooCommerce integration modules. Fyndiq is part of the CDON marketplace
+  group and was originally backed by Northzone.
 url: https://raw.githubusercontent.com/api-evangelist/fyndiq/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - northzone
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-merchant-api
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://fyndiq.se/fyndiq/fyndiq_share.png
 tags:
 - Company
 - Consumer
-apis: []
+- Marketplace
+- E-Commerce
+- Retail
+- Products
+- Orders
+- Sweden
+apis:
+- aid: fyndiq:fyndiq-articles-api
+  name: Fyndiq Articles API
+  description: Create, update, retrieve and delete product articles.
+  humanURL: https://developers.fyndiq.com/
+  baseURL: https://merchants-api.fyndiq.se/api/v1
+  tags:
+  - Articles
+  properties:
+  - type: OpenAPI
+    url: openapi/fyndiq-articles-api-openapi.yml
+  - type: APIReference
+    url: https://merchantapi.fyndiq.com/
+  - type: Documentation
+    url: https://developers.fyndiq.com/
+- aid: fyndiq:fyndiq-orders-api
+  name: Fyndiq Orders API
+  description: Retrieve, fulfil and cancel marketplace orders.
+  humanURL: https://developers.fyndiq.com/
+  baseURL: https://merchants-api.fyndiq.se/api/v1
+  tags:
+  - Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/fyndiq-orders-api-openapi.yml
+  - type: APIReference
+    url: https://merchantapi.fyndiq.com/
+  - type: Documentation
+    url: https://developers.fyndiq.com/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,4 +80,55 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: http://www.fyndiq.se
+  url: https://www.fyndiq.se
+- type: DeveloperPortal
+  url: https://developers.fyndiq.com/
+- type: Documentation
+  url: https://developers.fyndiq.com/
+- type: APIReference
+  url: https://merchantapi.fyndiq.com/
+- type: Postman
+  url: https://documenter.getpostman.com/view/2328684/7185ENK
+- type: Support
+  url: https://support.fyndiq.se/hc/
+- type: GitHubOrganization
+  url: https://github.com/fyndiq
+- type: Login
+  url: https://merchantcenter.fyndiq.se/
+- type: TermsOfService
+  url: https://fyndiq.se/fyndiq/policy-och-villkor/
+- type: PrivacyPolicy
+  url: https://fyndiq.se/fyndiq/policy-och-villkor/
+- type: Authentication
+  url: authentication/fyndiq-authentication.yml
+- type: Conventions
+  url: conventions/fyndiq-conventions.yml
+- type: ErrorCatalog
+  url: errors/fyndiq-problem-types.yml
+- type: Sandbox
+  url: sandbox/fyndiq-sandbox.yml
+- type: Lifecycle
+  url: lifecycle/fyndiq-lifecycle.yml
+- type: DataModel
+  url: data-model/fyndiq-data-model.yml
+- type: Conformance
+  url: conformance/fyndiq-conformance.yml
+- type: MCPServer
+  url: mcp/fyndiq-mcp.yml
+- type: Packages
+  url: packages/fyndiq-packages.yml
+- type: SDKs
+  url: packages/fyndiq-packages.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/fyndiq-llms.txt
+- type: AgenticAccess
+  url: agentic-access/fyndiq-agentic-access.yml
+- type: DomainSecurity
+  url: security/fyndiq-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

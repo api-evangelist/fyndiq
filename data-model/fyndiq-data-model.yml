@@ -1,0 +1,42 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/fyndiq-merchant-api-openapi.yml
+summary: >-
+  Entity-relationship graph derived from the Fyndiq Merchant API schemas. The
+  merchant manages a catalog of Articles; buyers on the marketplace generate
+  Orders that reference an Article. Categories provide the taxonomy Articles are
+  classified into.
+entities:
+  - name: Article
+    id_field: id
+    description: A product listing owned by a merchant. Carries localized title/description, per-market price and shipping time, images, and inventory quantity.
+    key_fields: [id, product_id, sku, parent_sku, merchant_id, status, fyndiq_status, quantity]
+  - name: Order
+    id_field: id
+    description: A marketplace order for a single article, with buyer shipping address, price/VAT breakdown, state and fulfilment deadline.
+    key_fields: [id, article_id, state, market, fulfillment_deadline]
+  - name: Category
+    id_field: name
+    description: A node in the Fyndiq category tree, retrieved per market + language.
+  - name: TrackingInformation
+    description: Carrier + tracking number supplied when fulfilling an order.
+relationships:
+  - from: Order
+    to: Article
+    type: belongs_to
+    via: article_id
+  - from: Order
+    to: TrackingInformation
+    type: has_many
+    via: tracking_information
+  - from: Article
+    to: Category
+    type: has_many
+    via: categories
+  - from: Article
+    to: MarketPrice
+    type: has_many
+    via: price
+id_prefixes:
+  documented: false
+  note: Fyndiq uses opaque string IDs (article_id, order_id, product_id); no documented human-readable prefixes.

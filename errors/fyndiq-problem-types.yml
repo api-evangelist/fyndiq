@@ -1,0 +1,50 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/fyndiq-merchant-api-openapi.yml
+format: custom
+envelope:
+  description: Human-readable summary of the error.
+  errors: Object carrying field-level validation detail (present on 400 validation failures and some conflicts).
+note: >-
+  Fyndiq does not use RFC 9457 problem+json. Errors are returned as a JSON
+  object with a `description` string and an optional `errors` object. HTTP
+  status codes signal success (2xx), client error (4xx) and server error (5xx).
+problems:
+  - status: 400
+    title: Invalid payload
+    meaning: The request body failed validation; the `errors` object lists offending fields.
+    source_operations:
+      - createArticle
+      - updateArticle
+      - updateArticlePrice
+      - updateArticleQuantity
+      - bulkCreateArticles
+      - bulkUpdateArticles
+  - status: 401
+    title: Authorization credentials were incorrect
+    meaning: Basic Authentication failed (bad merchantID:token).
+    source_operations: [createArticle]
+  - status: 403
+    title: Permission denied / object not accessible
+    meaning: >-
+      The merchant does not have permission to access the object, or the order
+      is in a state that forbids the action (already fulfilled, already
+      cancelled, or past the fulfilment deadline).
+    source_operations:
+      - retrieveArticle
+      - updateArticle
+      - updateArticlePrice
+      - updateArticleQuantity
+      - fulfillOrder
+      - cancelOrder
+  - status: 404
+    title: Not found
+    meaning: The requested article (e.g. by SKU) does not exist.
+    source_operations: [retrieveArticleBySku]
+  - status: 409
+    title: SKU already exists
+    meaning: An article with the supplied SKU already exists and cannot be created again.
+    source_operations: [createArticle]
+  - status: 5xx
+    title: Server error
+    meaning: An unexpected error occurred on the Fyndiq server.

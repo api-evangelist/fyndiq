@@ -1,0 +1,35 @@
+generated: '2026-07-19'
+method: searched
+source: https://merchantapi.fyndiq.com (Fyndiq Merchant API documentation — Sandbox test environment)
+api: openapi/fyndiq-merchant-api-openapi.yml
+summary: >-
+  Fyndiq provides a self-contained sandbox environment in which merchants can
+  prototype and test their integration before going live. It mirrors the
+  production resource surface at a separate base URL, with separate credentials.
+environments:
+  - name: sandbox
+    base_url: https://merchants-api.sandbox.fyndiq.se/api/v1/
+    resources:
+      articles: https://merchants-api.sandbox.fyndiq.se/api/v1/articles
+      orders: https://merchants-api.sandbox.fyndiq.se/api/v1/orders/
+  - name: live
+    base_url: https://merchants-api.fyndiq.se/api/v1/
+credentials:
+  mechanism: HTTP Basic (merchantID:token)
+  provisioning: Sandbox credentials are provided by Fyndiq upon request.
+  note: >-
+    When migrating from sandbox to production you must change both the base URLs
+    and the credentials in your code.
+test_tooling:
+  - name: Create a test order
+    operation: createTestOrder
+    detail: >-
+      POST /orders/ creates a test order in the sandbox so merchants can exercise
+      the order-retrieval and fulfilment flow. This endpoint is NOT available in
+      production. Response time can vary.
+test_values:
+  documented: false
+  note: >-
+    Fyndiq does not publish magic/fixed test identifiers or test card numbers
+    (the marketplace handles payments; merchants never touch card data). Test
+    articles and orders are created live in the sandbox via the API.

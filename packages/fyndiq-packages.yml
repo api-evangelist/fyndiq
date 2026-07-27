@@ -1,0 +1,34 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/fyndiq
+note: >-
+  Fyndiq publishes no client SDK on npm/PyPI/Packagist/Maven/NuGet. Its
+  first-party integration libraries are the official e-commerce platform modules
+  in the Fyndiq GitHub organization, which connect a merchant's store to the
+  Fyndiq Merchant API. These are the officially maintained ways to consume the
+  API from the three supported platforms.
+packages:
+  - language: php
+    platform: Magento
+    registry: github
+    name: fyndiq-magento-module
+    url: https://github.com/fyndiq/fyndiq-magento-module
+    install: Clone/install from GitHub into your Magento store.
+    official: true
+    description: Fyndiq official Magento module.
+  - language: php
+    platform: PrestaShop
+    registry: github
+    name: fyndiq-prestashop-module
+    url: https://github.com/fyndiq/fyndiq-prestashop-module
+    install: Clone/install from GitHub into your PrestaShop store.
+    official: true
+    description: Fyndiq official PrestaShop module.
+  - language: php
+    platform: WooCommerce
+    registry: github
+    name: fyndiq-woocommerce-module
+    url: https://github.com/fyndiq/fyndiq-woocommerce-module
+    install: Clone/install from GitHub into your WooCommerce store.
+    official: true
+    description: Fyndiq official WooCommerce module.

@@ -1,0 +1,46 @@
+generated: '2026-07-19'
+method: searched
+source: https://merchantapi.fyndiq.com (Fyndiq Merchant API documentation)
+api: openapi/fyndiq-merchant-api-openapi.yml
+authentication:
+  style: http-basic
+  detail: >-
+    All endpoints require HTTP Basic Authentication. The Authorization header
+    carries "Basic" followed by the Base64-encoded string "merchantID:token".
+  ref: authentication/fyndiq-authentication.yml
+transport:
+  content_type: application/json
+  tls: TLS 1.2+ required (TLS 1.0 not supported; TLS 1.1 minimum)
+idempotency:
+  supported: false
+  note: >-
+    Fyndiq does not document an idempotency-key mechanism. Bulk create/update
+    endpoints process batches but no client-supplied idempotency key is defined.
+pagination:
+  style: limit-offset
+  applies_to: [listArticles]
+  detail: >-
+    List articles is paginated; callers can retrieve up to 1000 articles per
+    page via limit/offset-style paging.
+filtering:
+  applies_to: [listOrders]
+  detail: The order `state` field supports filtering (CREATED / FULFILLED / CANCELLED); new orders are returned by default.
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: Version is carried in the URL path (/api/v1/).
+error_envelope:
+  format: custom
+  shape:
+    description: string (human-readable summary)
+    errors: object (field-level validation detail, when applicable)
+  ref: errors/fyndiq-problem-types.yml
+localization:
+  detail: Article title and description are arrays of {language, value} objects; price and shipping_time are per-market arrays.
+environments:
+  live: https://merchants-api.fyndiq.se/api/v1/
+  sandbox: https://merchants-api.sandbox.fyndiq.se/api/v1/
+  ref: sandbox/fyndiq-sandbox.yml
+rate_limits:
+  documented: false
+  note: No published rate-limit headers or quotas; bulk endpoints cap batch size (100 create / 200 update).

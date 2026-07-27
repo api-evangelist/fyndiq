@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: searched
+source: https://merchantapi.fyndiq.com (Fyndiq Merchant API documentation)
+api: openapi/fyndiq-merchant-api-openapi.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: >-
+    The API version is carried in the URL path (/api/v1/). Fyndiq states it is
+    "constantly working on improving our API by adding new endpoints for
+    existing resources and making new resources available" — additive evolution
+    within v1.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No published deprecation policy or RFC 8594 Sunset/Deprecation header support was found.
+sla:
+  url: null
+  note: No published SLA / uptime target found.
+status_page:
+  url: null
+  note: No public status page found (status.fyndiq.se / status.fyndiq.com do not resolve).
+support:
+  url: https://support.fyndiq.se/hc/
+  detail: Merchant Help Center.
+deprecated_operations: []

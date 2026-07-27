@@ -1,0 +1,36 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/fyndiq-merchant-api-openapi.yml
+standards:
+  - id: http-basic-auth
+    conforms: true
+    evidence: All endpoints require HTTP Basic Authentication (RFC 7617).
+  - id: rest
+    conforms: true
+    evidence: Resource-oriented URLs, HTTP verbs mapped to CRUD, JSON bodies.
+  - id: json
+    conforms: true
+    evidence: Request and response bodies are application/json.
+  - id: pagination
+    conforms: true
+    evidence: listArticles is paginated (limit/offset, up to 1000 per page).
+  - id: tls-1.2
+    conforms: true
+    evidence: Docs require TLS 1.2+ (TLS 1.0 not supported).
+  - id: oauth2
+    conforms: false
+  - id: openid-connect
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use a custom {description, errors} envelope, not application/problem+json.
+  - id: rfc8594-sunset
+    conforms: false
+  - id: json-api
+    conforms: false
+  - id: asyncapi-events
+    conforms: false
+    evidence: No published event/webhook/AsyncAPI surface.
+compliance_program:
+  published: false
+  note: No public certifications (SOC 2 / ISO 27001 / PCI DSS) or trust center found for the Fyndiq Merchant API.

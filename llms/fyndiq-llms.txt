@@ -1,0 +1,30 @@
+# Fyndiq
+
+> Fyndiq is Sweden's largest marketplace for bargains, connecting merchants with millions of deal-seeking consumers. The Fyndiq Merchant API lets merchants upload and manage product articles and retrieve, fulfil and cancel orders. It is a REST/JSON API secured with HTTP Basic Authentication, with a self-contained sandbox for integration testing.
+
+## APIs
+
+- [Fyndiq Merchant API (developer portal)](https://developers.fyndiq.com/): Developer documentation home for the Merchant API.
+- [Merchant API reference (Postman)](https://merchantapi.fyndiq.com/): Full request/response reference for articles and orders.
+- [Merchant Center](https://merchantcenter.fyndiq.se/): Web console for merchants.
+
+## Specs
+
+- [OpenAPI (derived)](https://raw.githubusercontent.com/api-evangelist/fyndiq/refs/heads/main/openapi/fyndiq-merchant-api-openapi.yml): Merchant API, reconstructed from the published Postman collection (16 operations).
+- [Postman collection](https://raw.githubusercontent.com/api-evangelist/fyndiq/refs/heads/main/postman/fyndiq-merchant-api.postman_collection.json): Verbatim published collection.
+
+## Artifacts
+
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/fyndiq/refs/heads/main/authentication/fyndiq-authentication.yml): HTTP Basic (merchantID:token).
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/fyndiq/refs/heads/main/conventions/fyndiq-conventions.yml): Pagination, versioning, error envelope, environments.
+- [Error catalog](https://raw.githubusercontent.com/api-evangelist/fyndiq/refs/heads/main/errors/fyndiq-problem-types.yml): 400/401/403/404/409/5xx.
+- [Sandbox](https://raw.githubusercontent.com/api-evangelist/fyndiq/refs/heads/main/sandbox/fyndiq-sandbox.yml): Test environment + create-test-order.
+- [Data model](https://raw.githubusercontent.com/api-evangelist/fyndiq/refs/heads/main/data-model/fyndiq-data-model.yml): Article, Order, Category.
+- [Agent skills](https://raw.githubusercontent.com/api-evangelist/fyndiq/refs/heads/main/skills/_index.yml): Manage catalog; fulfil orders.
+
+## Docs
+
+- [Merchant Help Center](https://support.fyndiq.se/hc/): Support and merchant guides.
+- [Category tree](https://developers.fyndiq.com/category-tree/): Fyndiq category taxonomy.
+- [About Fyndiq](https://fyndiq.se/fyndiq/om-fyndiq/): Company information.
+- [Terms & policy](https://fyndiq.se/fyndiq/policy-och-villkor/): Terms and privacy policy.

@@ -1,0 +1,20 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Fyndiq Merchant API
+  version: 1.0.0
+extends: openapi/fyndiq-merchant-api-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: true
+      x-apievangelist-source: https://merchantapi.fyndiq.com (Postman collection 2328684/7185ENK)
+      x-artifact-conventions: conventions/fyndiq-conventions.yml
+      x-artifact-errors: errors/fyndiq-problem-types.yml
+      x-artifact-sandbox: sandbox/fyndiq-sandbox.yml
+      x-artifact-data-model: data-model/fyndiq-data-model.yml
+  - target: $.tags
+    update:
+      - name: Articles
+        description: Product catalog management (create, update price/quantity, bulk, delete).
+      - name: Orders
+        description: Order retrieval, fulfilment with tracking, and cancellation.

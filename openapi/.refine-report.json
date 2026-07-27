@@ -1,0 +1,16 @@
+{
+  "provider": "fyndiq",
+  "sources": [
+    "fyndiq-articles-api-openapi.yml",
+    "fyndiq-orders-api-openapi.yml"
+  ],
+  "outputs": [
+    "fyndiq-articles-api-openapi.yml",
+    "fyndiq-orders-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

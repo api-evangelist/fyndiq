@@ -1,0 +1,12 @@
+generated: '2026-07-19'
+method: generated
+source: openapi/fyndiq-merchant-api-openapi.yml
+skills:
+  - file: fyndiq-manage-product-catalog.md
+    name: Manage the Fyndiq product catalog
+    api: openapi/fyndiq-merchant-api-openapi.yml
+    operations: [createArticle, listArticles, retrieveArticle, retrieveArticleBySku, updateArticle, updateArticlePrice, updateArticleQuantity, deleteArticle, listCategories]
+  - file: fyndiq-fulfill-orders.md
+    name: Fulfil Fyndiq orders
+    api: openapi/fyndiq-merchant-api-openapi.yml
+    operations: [listOrders, retrieveOrder, fulfillOrder, cancelOrder, createTestOrder]
