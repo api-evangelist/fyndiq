@@ -1,0 +1,1895 @@
+{
+  "item": [
+    {
+      "id": "58a9ceb2-c6c2-4c99-a0fe-13e4fd129b08",
+      "name": "Articles",
+      "description": {
+        "content": "Create, update, retrieve and delete product articles.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b217d6b2-7129-4e87-b3c5-c10878886246",
+          "name": "Create an article",
+          "request": {
+            "name": "Create an article",
+            "description": {
+              "content": "Create a single article on the Fyndiq platform.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"product_id\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"parent_sku\": \"<string>\",\n  \"title\": [\n    {\n      \"language\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"description\": [\n    {\n      \"language\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"status\": \"<string>\",\n  \"fyndiq_status\": \"<string>\",\n  \"fyndiq_reasons\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"properties\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"brand\": \"<string>\",\n  \"gtin\": \"<string>\",\n  \"main_image\": \"<uri>\",\n  \"images\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"markets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"merchant_id\": \"<string>\",\n  \"price\": [\n    {\n      \"market\": \"<string>\",\n      \"value\": {\n        \"amount\": \"<string>\",\n        \"currency\": \"<string>\"\n      }\n    },\n    {\n      \"market\": \"<string>\",\n      \"value\": {\n        \"amount\": \"<string>\",\n        \"currency\": \"<string>\"\n      }\n    }\n  ],\n  \"original_price\": [\n    {\n      \"market\": \"<string>\",\n      \"value\": {\n        \"amount\": \"<string>\",\n        \"currency\": \"<string>\"\n      }\n    },\n    {\n      \"market\": \"<string>\",\n      \"value\": {\n        \"amount\": \"<string>\",\n        \"currency\": \"<string>\"\n      }\n    }\n  ],\n  \"shipping_time\": [\n    {\n      \"market\": \"<string>\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    },\n    {\n      \"market\": \"<string>\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "76a9991e-6603-40f9-a9ce-6042f9820f5f",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"product_id\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"parent_sku\": \"<string>\",\n  \"title\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"description\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"status\": \"for sale\",\n  \"fyndiq_status\": \"new\",\n  \"fyndiq_reasons\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"properties\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"brand\": \"<string>\",\n  \"gtin\": \"<string>\",\n  \"main_image\": \"<uri>\",\n  \"images\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"markets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"merchant_id\": \"<string>\",\n  \"price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"original_price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"shipping_time\": [\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    },\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"description\": \"Article was created.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c7f64017-9f4f-4969-ba40-1c2f1a0f7e6e",
+              "name": "Invalid payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"product_id\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"parent_sku\": \"<string>\",\n  \"title\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"description\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"status\": \"for sale\",\n  \"fyndiq_status\": \"new\",\n  \"fyndiq_reasons\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"properties\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"brand\": \"<string>\",\n  \"gtin\": \"<string>\",\n  \"main_image\": \"<uri>\",\n  \"images\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"markets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"merchant_id\": \"<string>\",\n  \"price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"original_price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"shipping_time\": [\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    },\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "95bcd026-2648-4ef5-8df0-fcc57b63e41b",
+              "name": "Authorization credentials were incorrect",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"product_id\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"parent_sku\": \"<string>\",\n  \"title\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"description\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"status\": \"for sale\",\n  \"fyndiq_status\": \"new\",\n  \"fyndiq_reasons\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"properties\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"brand\": \"<string>\",\n  \"gtin\": \"<string>\",\n  \"main_image\": \"<uri>\",\n  \"images\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"markets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"merchant_id\": \"<string>\",\n  \"price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"original_price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"shipping_time\": [\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    },\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "91f8bec1-156e-4824-aef7-6e69e287a6a8",
+              "name": "SKU already exists, cannot create article",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"product_id\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"parent_sku\": \"<string>\",\n  \"title\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"description\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"status\": \"for sale\",\n  \"fyndiq_status\": \"new\",\n  \"fyndiq_reasons\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"properties\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"brand\": \"<string>\",\n  \"gtin\": \"<string>\",\n  \"main_image\": \"<uri>\",\n  \"images\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"markets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"merchant_id\": \"<string>\",\n  \"price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"original_price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"shipping_time\": [\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    },\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9caf5fd5-28af-40aa-9590-6891010bd534",
+          "name": "List articles",
+          "request": {
+            "name": "List articles",
+            "description": {
+              "content": "Retrieve the product data on your Fyndiq account. Responses are paginated; use the pagination query parameters to page through results (up to 1000 per page).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of articles to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Offset into the result set for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "069b3012-70f2-4b7a-9b29-89278e1cd9d8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"product_id\": \"<string>\",\n    \"sku\": \"<string>\",\n    \"parent_sku\": \"<string>\",\n    \"title\": [\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"description\": [\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"quantity\": \"<integer>\",\n    \"status\": \"for sale\",\n    \"fyndiq_status\": \"new\",\n    \"fyndiq_reasons\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"categories\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"properties\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"brand\": \"<string>\",\n    \"gtin\": \"<string>\",\n    \"main_image\": \"<uri>\",\n    \"images\": [\n      \"<uri>\",\n      \"<uri>\"\n    ],\n    \"markets\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"merchant_id\": \"<string>\",\n    \"price\": [\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      },\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      }\n    ],\n    \"original_price\": [\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      },\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      }\n    ],\n    \"shipping_time\": [\n      {\n        \"market\": \"SE\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      },\n      {\n        \"market\": \"SE\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      }\n    ]\n  },\n  {\n    \"id\": \"<string>\",\n    \"product_id\": \"<string>\",\n    \"sku\": \"<string>\",\n    \"parent_sku\": \"<string>\",\n    \"title\": [\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"description\": [\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"quantity\": \"<integer>\",\n    \"status\": \"for sale\",\n    \"fyndiq_status\": \"new\",\n    \"fyndiq_reasons\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"categories\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"properties\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"brand\": \"<string>\",\n    \"gtin\": \"<string>\",\n    \"main_image\": \"<uri>\",\n    \"images\": [\n      \"<uri>\",\n      \"<uri>\"\n    ],\n    \"markets\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"merchant_id\": \"<string>\",\n    \"price\": [\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      },\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      }\n    ],\n    \"original_price\": [\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      },\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      }\n    ],\n    \"shipping_time\": [\n      {\n        \"market\": \"SE\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      },\n      {\n        \"market\": \"SE\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "67b6f8ab-7182-49a8-8f7e-593519fce553",
+          "name": "Bulk create articles",
+          "request": {
+            "name": "Bulk create articles",
+            "description": {
+              "content": "Create a batch of articles in one call. Up to 100 create requests per call.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "articles",
+                "bulk"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"id\": \"<string>\",\n    \"product_id\": \"<string>\",\n    \"sku\": \"<string>\",\n    \"parent_sku\": \"<string>\",\n    \"title\": [\n      {\n        \"language\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"description\": [\n      {\n        \"language\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"quantity\": \"<integer>\",\n    \"status\": \"<string>\",\n    \"fyndiq_status\": \"<string>\",\n    \"fyndiq_reasons\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"categories\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"properties\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"brand\": \"<string>\",\n    \"gtin\": \"<string>\",\n    \"main_image\": \"<uri>\",\n    \"images\": [\n      \"<uri>\",\n      \"<uri>\"\n    ],\n    \"markets\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"merchant_id\": \"<string>\",\n    \"price\": [\n      {\n        \"market\": \"<string>\",\n        \"value\": {\n          \"amount\": \"<string>\",\n          \"currency\": \"<string>\"\n        }\n      },\n      {\n        \"market\": \"<string>\",\n        \"value\": {\n          \"amount\": \"<string>\",\n          \"currency\": \"<string>\"\n        }\n      }\n    ],\n    \"original_price\": [\n      {\n        \"market\": \"<string>\",\n        \"value\": {\n          \"amount\": \"<string>\",\n          \"currency\": \"<string>\"\n        }\n      },\n      {\n        \"market\": \"<string>\",\n        \"value\": {\n          \"amount\": \"<string>\",\n          \"currency\": \"<string>\"\n        }\n      }\n    ],\n    \"shipping_time\": [\n      {\n        \"market\": \"<string>\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      },\n      {\n        \"market\": \"<string>\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      }\n    ]\n  },\n  {\n    \"id\": \"<string>\",\n    \"product_id\": \"<string>\",\n    \"sku\": \"<string>\",\n    \"parent_sku\": \"<string>\",\n    \"title\": [\n      {\n        \"language\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"description\": [\n      {\n        \"language\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"quantity\": \"<integer>\",\n    \"status\": \"<string>\",\n    \"fyndiq_status\": \"<string>\",\n    \"fyndiq_reasons\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"categories\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"properties\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"brand\": \"<string>\",\n    \"gtin\": \"<string>\",\n    \"main_image\": \"<uri>\",\n    \"images\": [\n      \"<uri>\",\n      \"<uri>\"\n    ],\n    \"markets\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"merchant_id\": \"<string>\",\n    \"price\": [\n      {\n        \"market\": \"<string>\",\n        \"value\": {\n          \"amount\": \"<string>\",\n          \"currency\": \"<string>\"\n        }\n      },\n      {\n        \"market\": \"<string>\",\n        \"value\": {\n          \"amount\": \"<string>\",\n          \"currency\": \"<string>\"\n        }\n      }\n    ],\n    \"original_price\": [\n      {\n        \"market\": \"<string>\",\n        \"value\": {\n          \"amount\": \"<string>\",\n          \"currency\": \"<string>\"\n        }\n      },\n      {\n        \"market\": \"<string>\",\n        \"value\": {\n          \"amount\": \"<string>\",\n          \"currency\": \"<string>\"\n        }\n      }\n    ],\n    \"shipping_time\": [\n      {\n        \"market\": \"<string>\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      },\n      {\n        \"market\": \"<string>\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      }\n    ]\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e2db79dd-b98f-4e95-842b-141089a9ff2a",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"id\": \"<string>\",\n    \"product_id\": \"<string>\",\n    \"sku\": \"<string>\",\n    \"parent_sku\": \"<string>\",\n    \"title\": [\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"description\": [\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"quantity\": \"<integer>\",\n    \"status\": \"for sale\",\n    \"fyndiq_status\": \"new\",\n    \"fyndiq_reasons\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"categories\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"properties\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"brand\": \"<string>\",\n    \"gtin\": \"<string>\",\n    \"main_image\": \"<uri>\",\n    \"images\": [\n      \"<uri>\",\n      \"<uri>\"\n    ],\n    \"markets\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"merchant_id\": \"<string>\",\n    \"price\": [\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      },\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      }\n    ],\n    \"original_price\": [\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      },\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      }\n    ],\n    \"shipping_time\": [\n      {\n        \"market\": \"SE\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      },\n      {\n        \"market\": \"SE\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      }\n    ]\n  },\n  {\n    \"id\": \"<string>\",\n    \"product_id\": \"<string>\",\n    \"sku\": \"<string>\",\n    \"parent_sku\": \"<string>\",\n    \"title\": [\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"description\": [\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"quantity\": \"<integer>\",\n    \"status\": \"for sale\",\n    \"fyndiq_status\": \"new\",\n    \"fyndiq_reasons\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"categories\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"properties\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"brand\": \"<string>\",\n    \"gtin\": \"<string>\",\n    \"main_image\": \"<uri>\",\n    \"images\": [\n      \"<uri>\",\n      \"<uri>\"\n    ],\n    \"markets\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"merchant_id\": \"<string>\",\n    \"price\": [\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      },\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      }\n    ],\n    \"original_price\": [\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      },\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      }\n    ],\n    \"shipping_time\": [\n      {\n        \"market\": \"SE\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      },\n      {\n        \"market\": \"SE\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      }\n    ]\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"Accepted\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "33d20208-e681-4805-906a-49079b01845a",
+              "name": "Invalid payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"id\": \"<string>\",\n    \"product_id\": \"<string>\",\n    \"sku\": \"<string>\",\n    \"parent_sku\": \"<string>\",\n    \"title\": [\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"description\": [\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"quantity\": \"<integer>\",\n    \"status\": \"for sale\",\n    \"fyndiq_status\": \"new\",\n    \"fyndiq_reasons\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"categories\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"properties\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"brand\": \"<string>\",\n    \"gtin\": \"<string>\",\n    \"main_image\": \"<uri>\",\n    \"images\": [\n      \"<uri>\",\n      \"<uri>\"\n    ],\n    \"markets\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"merchant_id\": \"<string>\",\n    \"price\": [\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      },\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      }\n    ],\n    \"original_price\": [\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      },\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      }\n    ],\n    \"shipping_time\": [\n      {\n        \"market\": \"SE\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      },\n      {\n        \"market\": \"SE\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      }\n    ]\n  },\n  {\n    \"id\": \"<string>\",\n    \"product_id\": \"<string>\",\n    \"sku\": \"<string>\",\n    \"parent_sku\": \"<string>\",\n    \"title\": [\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"description\": [\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"language\": \"en-US\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"quantity\": \"<integer>\",\n    \"status\": \"for sale\",\n    \"fyndiq_status\": \"new\",\n    \"fyndiq_reasons\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"categories\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"properties\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"brand\": \"<string>\",\n    \"gtin\": \"<string>\",\n    \"main_image\": \"<uri>\",\n    \"images\": [\n      \"<uri>\",\n      \"<uri>\"\n    ],\n    \"markets\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"merchant_id\": \"<string>\",\n    \"price\": [\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      },\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      }\n    ],\n    \"original_price\": [\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      },\n      {\n        \"market\": \"SE\",\n        \"value\": {\n          \"amount\": \"50.00\",\n          \"currency\": \"SEK\"\n        }\n      }\n    ],\n    \"shipping_time\": [\n      {\n        \"market\": \"SE\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      },\n      {\n        \"market\": \"SE\",\n        \"min\": \"<integer>\",\n        \"max\": \"<integer>\"\n      }\n    ]\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c83a9ce8-a402-44b2-8474-d1ca424e2714",
+          "name": "Bulk update articles",
+          "request": {
+            "name": "Bulk update articles",
+            "description": {
+              "content": "Update a batch of articles in one call. Up to 200 update requests per call.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "articles",
+                "bulk"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  \"<object>\",\n  \"<object>\"\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8a09803f-0417-416b-a7bd-60cbad251f17",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  \"<object>\",\n  \"<object>\"\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"Accepted\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7cf75e54-2bf6-40ce-8082-44d10533505c",
+              "name": "Invalid payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  \"<object>\",\n  \"<object>\"\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dce1372b-63f0-450c-8d52-494485994427",
+          "name": "Retrieve an article",
+          "request": {
+            "name": "Retrieve an article",
+            "description": {},
+            "url": {
+              "path": [
+                "articles",
+                ":article_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "article_id",
+                  "description": "(Required) Fyndiq unique ID for the article."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4b65f312-daae-491c-b3b2-af9838e68d63",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    ":article_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "article_id",
+                      "description": "(Required) Fyndiq unique ID for the article."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<string>\",\n  \"product_id\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"parent_sku\": \"<string>\",\n  \"title\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"description\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"status\": \"for sale\",\n  \"fyndiq_status\": \"new\",\n  \"fyndiq_reasons\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"properties\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"brand\": \"<string>\",\n  \"gtin\": \"<string>\",\n  \"main_image\": \"<uri>\",\n  \"images\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"markets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"merchant_id\": \"<string>\",\n  \"price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"original_price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"shipping_time\": [\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    },\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0ae5aa57-aaae-458c-bede-194e786f4c7d",
+              "name": "You do not have permission to access this object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    ":article_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "article_id",
+                      "description": "(Required) Fyndiq unique ID for the article."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d7c377b-bdc7-49ba-a48b-424796a26f7c",
+          "name": "Update an article",
+          "request": {
+            "name": "Update an article",
+            "description": {
+              "content": "Update one or several fields of an article.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "articles",
+                ":article_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "article_id",
+                  "description": "(Required) Fyndiq unique ID for the article."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"product_id\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"parent_sku\": \"<string>\",\n  \"title\": [\n    {\n      \"language\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"description\": [\n    {\n      \"language\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"status\": \"<string>\",\n  \"fyndiq_status\": \"<string>\",\n  \"fyndiq_reasons\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"properties\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"brand\": \"<string>\",\n  \"gtin\": \"<string>\",\n  \"main_image\": \"<uri>\",\n  \"images\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"markets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"merchant_id\": \"<string>\",\n  \"price\": [\n    {\n      \"market\": \"<string>\",\n      \"value\": {\n        \"amount\": \"<string>\",\n        \"currency\": \"<string>\"\n      }\n    },\n    {\n      \"market\": \"<string>\",\n      \"value\": {\n        \"amount\": \"<string>\",\n        \"currency\": \"<string>\"\n      }\n    }\n  ],\n  \"original_price\": [\n    {\n      \"market\": \"<string>\",\n      \"value\": {\n        \"amount\": \"<string>\",\n        \"currency\": \"<string>\"\n      }\n    },\n    {\n      \"market\": \"<string>\",\n      \"value\": {\n        \"amount\": \"<string>\",\n        \"currency\": \"<string>\"\n      }\n    }\n  ],\n  \"shipping_time\": [\n    {\n      \"market\": \"<string>\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    },\n    {\n      \"market\": \"<string>\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6c565603-10ae-42a5-9fbe-ab87af34424c",
+              "name": "Successful update",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    ":article_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "article_id",
+                      "description": "(Required) Fyndiq unique ID for the article."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"product_id\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"parent_sku\": \"<string>\",\n  \"title\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"description\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"status\": \"for sale\",\n  \"fyndiq_status\": \"new\",\n  \"fyndiq_reasons\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"properties\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"brand\": \"<string>\",\n  \"gtin\": \"<string>\",\n  \"main_image\": \"<uri>\",\n  \"images\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"markets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"merchant_id\": \"<string>\",\n  \"price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"original_price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"shipping_time\": [\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    },\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "25a5ea32-8e16-43ad-8d09-e39bbd16c9ce",
+              "name": "Invalid payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    ":article_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "article_id",
+                      "description": "(Required) Fyndiq unique ID for the article."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"product_id\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"parent_sku\": \"<string>\",\n  \"title\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"description\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"status\": \"for sale\",\n  \"fyndiq_status\": \"new\",\n  \"fyndiq_reasons\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"properties\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"brand\": \"<string>\",\n  \"gtin\": \"<string>\",\n  \"main_image\": \"<uri>\",\n  \"images\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"markets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"merchant_id\": \"<string>\",\n  \"price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"original_price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"shipping_time\": [\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    },\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d8c299b-37a0-43e1-a7ac-6be022e2968b",
+              "name": "Permission denied",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    ":article_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "article_id",
+                      "description": "(Required) Fyndiq unique ID for the article."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"product_id\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"parent_sku\": \"<string>\",\n  \"title\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"description\": [\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"language\": \"en-US\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"status\": \"for sale\",\n  \"fyndiq_status\": \"new\",\n  \"fyndiq_reasons\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"properties\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"brand\": \"<string>\",\n  \"gtin\": \"<string>\",\n  \"main_image\": \"<uri>\",\n  \"images\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"markets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"merchant_id\": \"<string>\",\n  \"price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"original_price\": [\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    },\n    {\n      \"market\": \"SE\",\n      \"value\": {\n        \"amount\": \"50.00\",\n        \"currency\": \"SEK\"\n      }\n    }\n  ],\n  \"shipping_time\": [\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    },\n    {\n      \"market\": \"SE\",\n      \"min\": \"<integer>\",\n      \"max\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "63b747f1-e39d-4a49-8074-a58484c4273b",
+          "name": "Delete an article",
+          "request": {
+            "name": "Delete an article",
+            "description": {
+              "content": "Set the article status to deleted; it will no longer be visible on Fyndiq.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "articles",
+                ":article_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "article_id",
+                  "description": "(Required) Fyndiq unique ID for the article."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3e6e151d-9de2-4e58-8f5a-c6b489e8f462",
+              "name": "Successful deletion",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    ":article_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "article_id",
+                      "description": "(Required) Fyndiq unique ID for the article."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4ceb8208-18aa-43b0-a781-730459c2fae8",
+          "name": "Update an article price",
+          "request": {
+            "name": "Update an article price",
+            "description": {},
+            "url": {
+              "path": [
+                "articles",
+                ":article_id",
+                "price"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "article_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"market\": \"<string>\",\n    \"value\": {\n      \"amount\": \"<string>\",\n      \"currency\": \"<string>\"\n    }\n  },\n  {\n    \"market\": \"<string>\",\n    \"value\": {\n      \"amount\": \"<string>\",\n      \"currency\": \"<string>\"\n    }\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "87cb97d5-14b8-46e6-9145-2ccd0d0d285a",
+              "name": "Successful update",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    ":article_id",
+                    "price"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "article_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"market\": \"SE\",\n    \"value\": {\n      \"amount\": \"50.00\",\n      \"currency\": \"SEK\"\n    }\n  },\n  {\n    \"market\": \"SE\",\n    \"value\": {\n      \"amount\": \"50.00\",\n      \"currency\": \"SEK\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d697c3fe-7cff-4ecb-a640-d1ae580a646e",
+              "name": "Invalid payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    ":article_id",
+                    "price"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "article_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"market\": \"SE\",\n    \"value\": {\n      \"amount\": \"50.00\",\n      \"currency\": \"SEK\"\n    }\n  },\n  {\n    \"market\": \"SE\",\n    \"value\": {\n      \"amount\": \"50.00\",\n      \"currency\": \"SEK\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e1dfab86-de95-4893-965c-4aebf8dfb434",
+              "name": "Permission denied",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    ":article_id",
+                    "price"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "article_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"market\": \"SE\",\n    \"value\": {\n      \"amount\": \"50.00\",\n      \"currency\": \"SEK\"\n    }\n  },\n  {\n    \"market\": \"SE\",\n    \"value\": {\n      \"amount\": \"50.00\",\n      \"currency\": \"SEK\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bbb8d3be-cef1-48bc-bbe9-5a6c990b0b9d",
+          "name": "Update an article quantity",
+          "request": {
+            "name": "Update an article quantity",
+            "description": {},
+            "url": {
+              "path": [
+                "articles",
+                ":article_id",
+                "quantity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "article_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantity\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f81e215e-a792-406d-beeb-e4b4ee850da1",
+              "name": "Successful update",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    ":article_id",
+                    "quantity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "article_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quantity\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f126c2eb-b53f-4a11-83f1-d3800990edf9",
+              "name": "Invalid payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    ":article_id",
+                    "quantity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "article_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quantity\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "515a7620-9817-464d-9f14-2bdc0ebf8dc4",
+              "name": "Permission denied",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    ":article_id",
+                    "quantity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "article_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quantity\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ae7cfa37-f79c-448b-8e01-812cb7328aac",
+          "name": "Retrieve an article by SKU",
+          "request": {
+            "name": "Retrieve an article by SKU",
+            "description": {},
+            "url": {
+              "path": [
+                "articles",
+                "sku",
+                ":sku"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sku",
+                  "description": "(Required) SKU for the article."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74e14a8f-27de-4093-b784-c6479fb5cbfa",
+              "name": "Article found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    "sku",
+                    ":sku"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sku",
+                      "description": "(Required) SKU for the article."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"content\": {\n    \"article\": {\n      \"id\": \"<string>\",\n      \"product_id\": \"<string>\",\n      \"sku\": \"<string>\",\n      \"parent_sku\": \"<string>\",\n      \"title\": [\n        {\n          \"language\": \"en-US\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"language\": \"en-US\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"description\": [\n        {\n          \"language\": \"en-US\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"language\": \"en-US\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"quantity\": \"<integer>\",\n      \"status\": \"for sale\",\n      \"fyndiq_status\": \"new\",\n      \"fyndiq_reasons\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"categories\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"properties\": [\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"brand\": \"<string>\",\n      \"gtin\": \"<string>\",\n      \"main_image\": \"<uri>\",\n      \"images\": [\n        \"<uri>\",\n        \"<uri>\"\n      ],\n      \"markets\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"merchant_id\": \"<string>\",\n      \"price\": [\n        {\n          \"market\": \"SE\",\n          \"value\": {\n            \"amount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"currency\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"market\": \"SE\",\n          \"value\": {\n            \"amount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"currency\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"original_price\": [\n        {\n          \"market\": \"SE\",\n          \"value\": {\n            \"amount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"currency\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"market\": \"SE\",\n          \"value\": {\n            \"amount\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"currency\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"shipping_time\": [\n        {\n          \"market\": \"SE\",\n          \"min\": \"<integer>\",\n          \"max\": \"<integer>\"\n        },\n        {\n          \"market\": \"SE\",\n          \"min\": \"<integer>\",\n          \"max\": \"<integer>\"\n        }\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6f5ec245-edd5-4140-aefd-2caa8e30122e",
+              "name": "Article not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles",
+                    "sku",
+                    ":sku"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sku",
+                      "description": "(Required) SKU for the article."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71b79075-51b7-4c45-9ed4-9bba25939957",
+          "name": "List categories",
+          "request": {
+            "name": "List categories",
+            "description": {
+              "content": "Retrieve the Fyndiq category tree for the given market and language.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "categories",
+                ":market",
+                ":language"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "market",
+                  "description": "(Required) Market code (e.g. SE)."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "language",
+                  "description": "(Required) Language code (e.g. sv, en)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "99b0ba3d-6d6f-4060-87bf-62a135f5675d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "categories",
+                    ":market",
+                    ":language"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "market",
+                      "description": "(Required) Market code (e.g. SE)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "language",
+                      "description": "(Required) Language code (e.g. sv, en)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://merchants-api.fyndiq.se/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "77921d0e-20ca-4162-9f13-aa947a33ece3",
+    "name": "Fyndiq Merchant Articles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Fyndiq Merchant API enables merchants to upload and manage products (articles) and to retrieve and fulfil orders on the Fyndiq marketplace, Sweden's largest marketplace for bargains. The API is REST-oriented, uses JSON request and response bodies, and is protected with HTTP Basic Authentication (Base64-encoded `merchantID:token`). A self-contained sandbox environment mirrors production for integration testing.\n\nContact Support:\n Name: Fyndiq Merchant Help Center",
+      "type": "text/plain"
+    }
+  }
+}

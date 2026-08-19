@@ -1,0 +1,637 @@
+{
+  "item": [
+    {
+      "id": "cf52dc98-a09c-4407-ad85-c79e023d8869",
+      "name": "Orders",
+      "description": {
+        "content": "Retrieve, fulfil and cancel marketplace orders.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3211ed97-b849-4517-a29e-09508e39c622",
+          "name": "List orders",
+          "request": {
+            "name": "List orders",
+            "description": {
+              "content": "Retrieve your order data. The `state` field supports filtering; by default new orders are returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>",
+                  "description": "Filter orders by state."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "92200d75-9a2f-44e7-8a78-a03925c4f173",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"article_id\": \"string\",\n    \"title\": \"string\",\n    \"article_sku\": \"string\",\n    \"price\": {\n      \"amount\": 6266.058052464787,\n      \"vat_amount\": 210.22612087461033,\n      \"vat_rate\": 6823.260387727442,\n      \"currency\": \"SEK\"\n    },\n    \"total_price\": {\n      \"amount\": 6772.636821544439,\n      \"vat_amount\": 3602.9172258707777,\n      \"vat_rate\": 3571.953830044022,\n      \"currency\": \"SEK\"\n    },\n    \"quantity\": 7729,\n    \"shipping_address\": {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"street_address\": \"string\",\n      \"city\": \"string\",\n      \"postal_code\": \"string\",\n      \"country\": \"string\",\n      \"phone_number\": \"string\"\n    },\n    \"market\": \"SE\",\n    \"state\": \"CREATED\",\n    \"created_at\": \"string\",\n    \"updated_at\": \"string\",\n    \"fulfillment_deadline\": \"string\",\n    \"tracking_information\": [\n      {\n        \"carrier_name\": \"Postnord\",\n        \"tracking_number\": \"string\"\n      },\n      {\n        \"carrier_name\": \"Postnord\",\n        \"tracking_number\": \"string\"\n      }\n    ]\n  },\n  {\n    \"id\": \"string\",\n    \"article_id\": \"string\",\n    \"title\": \"string\",\n    \"article_sku\": \"string\",\n    \"price\": {\n      \"amount\": 3531.953828109392,\n      \"vat_amount\": 7385.266724542361,\n      \"vat_rate\": 7914.516751081209,\n      \"currency\": \"SEK\"\n    },\n    \"total_price\": {\n      \"amount\": 9337.770714094158,\n      \"vat_amount\": 6135.776655660954,\n      \"vat_rate\": 7529.243344652988,\n      \"currency\": \"SEK\"\n    },\n    \"quantity\": 7279,\n    \"shipping_address\": {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"street_address\": \"string\",\n      \"city\": \"string\",\n      \"postal_code\": \"string\",\n      \"country\": \"string\",\n      \"phone_number\": \"string\"\n    },\n    \"market\": \"SE\",\n    \"state\": \"CREATED\",\n    \"created_at\": \"string\",\n    \"updated_at\": \"string\",\n    \"fulfillment_deadline\": \"string\",\n    \"tracking_information\": [\n      {\n        \"carrier_name\": \"Postnord\",\n        \"tracking_number\": \"string\"\n      },\n      {\n        \"carrier_name\": \"Postnord\",\n        \"tracking_number\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8fffef13-dd98-43ba-8c36-b6e164d166d0",
+          "name": "Create a test order",
+          "request": {
+            "name": "Create a test order",
+            "description": {
+              "content": "Create a test order in the sandbox. This endpoint is NOT available in the production environment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6ca6c530-b0b4-4478-b124-fbc49bb56991",
+              "name": "Order was created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"description\": \"Article was created.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e7368d47-a9b2-414d-ab7c-31872d2ec639",
+          "name": "Retrieve an order",
+          "request": {
+            "name": "Retrieve an order",
+            "description": {},
+            "url": {
+              "path": [
+                "orders",
+                ":order_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "order_id",
+                  "description": "(Required) Fyndiq unique ID for the order."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fa044340-aab1-4aae-80bc-ec8f3bc6d4b1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":order_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "order_id",
+                      "description": "(Required) Fyndiq unique ID for the order."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"article_id\": \"string\",\n  \"title\": \"string\",\n  \"article_sku\": \"string\",\n  \"price\": {\n    \"amount\": 5587.25205980803,\n    \"vat_amount\": 194.21233736689248,\n    \"vat_rate\": 3325.71392972036,\n    \"currency\": \"SEK\"\n  },\n  \"total_price\": {\n    \"amount\": 4339.996909491638,\n    \"vat_amount\": 1504.4630319040564,\n    \"vat_rate\": 3086.542705273759,\n    \"currency\": \"SEK\"\n  },\n  \"quantity\": 1172,\n  \"shipping_address\": {\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"street_address\": \"string\",\n    \"city\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"phone_number\": \"string\"\n  },\n  \"market\": \"SE\",\n  \"state\": \"CREATED\",\n  \"created_at\": \"string\",\n  \"updated_at\": \"string\",\n  \"fulfillment_deadline\": \"string\",\n  \"tracking_information\": [\n    {\n      \"carrier_name\": \"Postnord\",\n      \"tracking_number\": \"string\"\n    },\n    {\n      \"carrier_name\": \"Postnord\",\n      \"tracking_number\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "92475594-ef33-42f1-86ee-1c9c299ba3c6",
+          "name": "Fulfil an order",
+          "request": {
+            "name": "Fulfil an order",
+            "description": {
+              "content": "Mark the order as handled once you have shipped the item; include tracking information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                ":order_id",
+                "fulfill"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "order_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tracking_information\": [\n    {\n      \"carrier_name\": \"<string>\",\n      \"tracking_number\": \"<string>\"\n    },\n    {\n      \"carrier_name\": \"<string>\",\n      \"tracking_number\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9c58536d-fbdb-4ab8-8e45-12795e5119fc",
+              "name": "Order row was fulfilled",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":order_id",
+                    "fulfill"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "order_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tracking_information\": [\n    {\n      \"carrier_name\": \"Postnord\",\n      \"tracking_number\": \"<string>\"\n    },\n    {\n      \"carrier_name\": \"Postnord\",\n      \"tracking_number\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "53514e78-318a-426c-8d99-036417608417",
+              "name": "Order cannot be fulfilled (already fulfilled/cancelled or past deadline)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":order_id",
+                    "fulfill"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "order_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tracking_information\": [\n    {\n      \"carrier_name\": \"Postnord\",\n      \"tracking_number\": \"<string>\"\n    },\n    {\n      \"carrier_name\": \"Postnord\",\n      \"tracking_number\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f343e3da-dd39-4791-89a4-3213c604b144",
+          "name": "Cancel an order",
+          "request": {
+            "name": "Cancel an order",
+            "description": {
+              "content": "Cancel an order when you are unable to ship the item (e.g. stock issue).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                ":order_id",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "order_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "57382611-c60a-4be8-9ae7-4605735dc512",
+              "name": "Order row was cancelled",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":order_id",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "order_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "57e2892e-aeba-4a75-af62-db7e037a637a",
+              "name": "Order cannot be cancelled (already fulfilled/cancelled)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":order_id",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "order_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://merchants-api.fyndiq.se/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "49df6388-aec5-45a6-a358-39e686c7779e",
+    "name": "Fyndiq Merchant Articles Orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Fyndiq Merchant API enables merchants to upload and manage products (articles) and to retrieve and fulfil orders on the Fyndiq marketplace, Sweden's largest marketplace for bargains. The API is REST-oriented, uses JSON request and response bodies, and is protected with HTTP Basic Authentication (Base64-encoded `merchantID:token`). A self-contained sandbox environment mirrors production for integration testing.\n\nContact Support:\n Name: Fyndiq Merchant Help Center",
+      "type": "text/plain"
+    }
+  }
+}

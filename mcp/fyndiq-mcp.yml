@@ -2,59 +2,63 @@ generated: '2026-07-19'
 method: derived
 status: candidate
 source: openapi/fyndiq-merchant-api-openapi.yml
-note: >-
-  Fyndiq does not publish an official MCP server. This is a candidate tool list
-  derived one-to-one from the Merchant API operations, as a starting point for
-  an agent-native surface. Not a Fyndiq claim.
+note: Fyndiq does not publish an official MCP server. This is a candidate tool list derived one-to-one
+  from the Merchant API operations, as a starting point for an agent-native surface. Not a Fyndiq claim.
 server:
   name: fyndiq-merchant
   transport: stdio
 tools:
-  - name: create_article
-    description: Create a single product article.
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#createArticle
-  - name: bulk_create_articles
-    description: Create up to 100 articles in one call.
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#bulkCreateArticles
-  - name: retrieve_article
-    description: Retrieve an article by Fyndiq ID.
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#retrieveArticle
-  - name: retrieve_article_by_sku
-    description: Retrieve an article by SKU.
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#retrieveArticleBySku
-  - name: list_articles
-    description: List articles (paginated).
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#listArticles
-  - name: list_categories
-    description: Retrieve the category tree for a market and language.
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#listCategories
-  - name: update_article
-    description: Update fields on an article.
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#updateArticle
-  - name: update_article_price
-    description: Update an article's price.
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#updateArticlePrice
-  - name: update_article_quantity
-    description: Update an article's quantity.
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#updateArticleQuantity
-  - name: bulk_update_articles
-    description: Update up to 200 articles in one call.
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#bulkUpdateArticles
-  - name: delete_article
-    description: Delete (soft) an article.
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#deleteArticle
-  - name: retrieve_order
-    description: Retrieve an order by Fyndiq ID.
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#retrieveOrder
-  - name: list_orders
-    description: List orders, optionally filtered by state.
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#listOrders
-  - name: fulfill_order
-    description: Mark an order fulfilled with tracking information.
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#fulfillOrder
-  - name: cancel_order
-    description: Cancel an order.
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#cancelOrder
-  - name: create_test_order
-    description: Create a test order (sandbox only).
-    source_operation: openapi/fyndiq-merchant-api-openapi.yml#createTestOrder
+- name: create_article
+  description: Create a single product article.
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#createArticle
+- name: bulk_create_articles
+  description: Create up to 100 articles in one call.
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#bulkCreateArticles
+- name: retrieve_article
+  description: Retrieve an article by Fyndiq ID.
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#retrieveArticle
+- name: retrieve_article_by_sku
+  description: Retrieve an article by SKU.
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#retrieveArticleBySku
+- name: list_articles
+  description: List articles (paginated).
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#listArticles
+- name: list_categories
+  description: Retrieve the category tree for a market and language.
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#listCategories
+- name: update_article
+  description: Update fields on an article.
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#updateArticle
+- name: update_article_price
+  description: Update an article's price.
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#updateArticlePrice
+- name: update_article_quantity
+  description: Update an article's quantity.
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#updateArticleQuantity
+- name: bulk_update_articles
+  description: Update up to 200 articles in one call.
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#bulkUpdateArticles
+- name: delete_article
+  description: Delete (soft) an article.
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#deleteArticle
+- name: retrieve_order
+  description: Retrieve an order by Fyndiq ID.
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#retrieveOrder
+- name: list_orders
+  description: List orders, optionally filtered by state.
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#listOrders
+- name: fulfill_order
+  description: Mark an order fulfilled with tracking information.
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#fulfillOrder
+- name: cancel_order
+  description: Cancel an order.
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#cancelOrder
+- name: create_test_order
+  description: Create a test order (sandbox only).
+  source_operation: openapi/fyndiq-merchant-api-openapi.yml#createTestOrder
+deployment:
+  mode: none
+  verified: derived
+  tools: 16
+  checked: '2026-08-12'
+  source: catalog MCP census

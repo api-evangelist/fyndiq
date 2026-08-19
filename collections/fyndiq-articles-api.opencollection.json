@@ -1,0 +1,244 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fyndiq Merchant Articles API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Articles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://merchants-api.fyndiq.se/api/v1/articles",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of articles to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Offset into the result set for pagination."
+              }
+            ]
+          },
+          "docs": "Retrieve the product data on your Fyndiq account. Responses are paginated; use the pagination query parameters to page through results (up to 1000 per page)."
+        },
+        {
+          "info": {
+            "name": "Create an article",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://merchants-api.fyndiq.se/api/v1/articles",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a single article on the Fyndiq platform."
+        },
+        {
+          "info": {
+            "name": "Bulk create articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://merchants-api.fyndiq.se/api/v1/articles/bulk",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a batch of articles in one call. Up to 100 create requests per call."
+        },
+        {
+          "info": {
+            "name": "Bulk update articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://merchants-api.fyndiq.se/api/v1/articles/bulk",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a batch of articles in one call. Up to 200 update requests per call."
+        },
+        {
+          "info": {
+            "name": "Retrieve an article",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://merchants-api.fyndiq.se/api/v1/articles/:article_id",
+            "params": [
+              {
+                "name": "article_id",
+                "value": "",
+                "type": "path",
+                "description": "Fyndiq unique ID for the article."
+              }
+            ]
+          },
+          "docs": "Retrieve an article"
+        },
+        {
+          "info": {
+            "name": "Update an article",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://merchants-api.fyndiq.se/api/v1/articles/:article_id",
+            "params": [
+              {
+                "name": "article_id",
+                "value": "",
+                "type": "path",
+                "description": "Fyndiq unique ID for the article."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update one or several fields of an article."
+        },
+        {
+          "info": {
+            "name": "Delete an article",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://merchants-api.fyndiq.se/api/v1/articles/:article_id",
+            "params": [
+              {
+                "name": "article_id",
+                "value": "",
+                "type": "path",
+                "description": "Fyndiq unique ID for the article."
+              }
+            ]
+          },
+          "docs": "Set the article status to deleted; it will no longer be visible on Fyndiq."
+        },
+        {
+          "info": {
+            "name": "Update an article price",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://merchants-api.fyndiq.se/api/v1/articles/:article_id/price",
+            "params": [
+              {
+                "name": "article_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an article price"
+        },
+        {
+          "info": {
+            "name": "Update an article quantity",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://merchants-api.fyndiq.se/api/v1/articles/:article_id/quantity",
+            "params": [
+              {
+                "name": "article_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an article quantity"
+        },
+        {
+          "info": {
+            "name": "Retrieve an article by SKU",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://merchants-api.fyndiq.se/api/v1/articles/sku/:sku",
+            "params": [
+              {
+                "name": "sku",
+                "value": "",
+                "type": "path",
+                "description": "SKU for the article."
+              }
+            ]
+          },
+          "docs": "Retrieve an article by SKU"
+        },
+        {
+          "info": {
+            "name": "List categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://merchants-api.fyndiq.se/api/v1/categories/:market/:language",
+            "params": [
+              {
+                "name": "market",
+                "value": "",
+                "type": "path",
+                "description": "Market code (e.g. SE)."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "path",
+                "description": "Language code (e.g. sv, en)."
+              }
+            ]
+          },
+          "docs": "Retrieve the Fyndiq category tree for the given market and language."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

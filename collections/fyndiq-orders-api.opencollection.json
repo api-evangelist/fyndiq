@@ -1,0 +1,114 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fyndiq Merchant Articles Orders API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://merchants-api.fyndiq.se/api/v1/orders",
+            "params": [
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "Filter orders by state."
+              }
+            ]
+          },
+          "docs": "Retrieve your order data. The `state` field supports filtering; by default new orders are returned."
+        },
+        {
+          "info": {
+            "name": "Create a test order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://merchants-api.fyndiq.se/api/v1/orders"
+          },
+          "docs": "Create a test order in the sandbox. This endpoint is NOT available in the production environment."
+        },
+        {
+          "info": {
+            "name": "Retrieve an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://merchants-api.fyndiq.se/api/v1/orders/:order_id",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "path",
+                "description": "Fyndiq unique ID for the order."
+              }
+            ]
+          },
+          "docs": "Retrieve an order"
+        },
+        {
+          "info": {
+            "name": "Fulfil an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://merchants-api.fyndiq.se/api/v1/orders/:order_id/fulfill",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Mark the order as handled once you have shipped the item; include tracking information."
+        },
+        {
+          "info": {
+            "name": "Cancel an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://merchants-api.fyndiq.se/api/v1/orders/:order_id/cancel",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel an order when you are unable to ship the item (e.g. stock issue)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
