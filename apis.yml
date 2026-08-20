@@ -41,6 +41,15 @@ tags:
 - Marketplace
 - E-Commerce
 - Retail
+- Product
+- Order
+- Sweden
+tags_raw:
+- Company
+- Consumer
+- Marketplace
+- E-Commerce
+- Retail
 - Products
 - Orders
 - Sweden
@@ -65,6 +74,8 @@ apis:
   humanURL: https://developers.fyndiq.com/
   baseURL: https://merchants-api.fyndiq.se/api/v1
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
