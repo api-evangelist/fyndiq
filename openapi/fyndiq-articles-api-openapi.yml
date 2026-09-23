@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Fyndiq Merchant Articles API
   version: v1
@@ -340,29 +340,49 @@ paths:
                   type: object
 components:
   schemas:
-    BulkResponse:
-      type: object
-      properties:
-        description:
-          type: string
-          example: Accepted
-        responses:
-          type: array
-          items:
-            type: object
-    CreatedResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        description:
-          type: string
-          example: Article was created.
     Property:
       type: object
       properties:
         name:
           type: string
+        value:
+          type: string
+    PriceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MarketPrice'
+    Error:
+      type: object
+      description: Standard Fyndiq error envelope. `errors` carries field-level detail.
+      properties:
+        description:
+          type: string
+        errors:
+          type: object
+    ShippingTime:
+      type: object
+      properties:
+        market:
+          type: string
+          example: SE
+        min:
+          type: integer
+        max:
+          type: integer
+    MarketPrice:
+      type: object
+      properties:
+        market:
+          type: string
+          example: SE
+        value:
+          $ref: '#/components/schemas/Money'
+    LocalizedText:
+      type: object
+      properties:
+        language:
+          type: string
+          example: en-US
         value:
           type: string
     Article:
@@ -430,36 +450,24 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ShippingTime'
-    ShippingTime:
+    CreatedResponse:
       type: object
       properties:
-        market:
+        id:
           type: string
-          example: SE
-        min:
-          type: integer
-        max:
-          type: integer
-    MarketPrice:
+        description:
+          type: string
+          example: Article was created.
+    BulkResponse:
       type: object
       properties:
-        market:
+        description:
           type: string
-          example: SE
-        value:
-          $ref: '#/components/schemas/Money'
-    PriceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MarketPrice'
-    LocalizedText:
-      type: object
-      properties:
-        language:
-          type: string
-          example: en-US
-        value:
-          type: string
+          example: Accepted
+        responses:
+          type: array
+          items:
+            type: object
     Money:
       type: object
       properties:
@@ -469,14 +477,6 @@ components:
         currency:
           type: string
           example: SEK
-    Error:
-      type: object
-      description: Standard Fyndiq error envelope. `errors` carries field-level detail.
-      properties:
-        description:
-          type: string
-        errors:
-          type: object
   securitySchemes:
     basicAuth:
       type: http
