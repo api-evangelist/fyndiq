@@ -340,17 +340,6 @@ paths:
                   type: object
 components:
   schemas:
-    Property:
-      type: object
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-    PriceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MarketPrice'
     Error:
       type: object
       description: Standard Fyndiq error envelope. `errors` carries field-level detail.
@@ -359,16 +348,6 @@ components:
           type: string
         errors:
           type: object
-    ShippingTime:
-      type: object
-      properties:
-        market:
-          type: string
-          example: SE
-        min:
-          type: integer
-        max:
-          type: integer
     MarketPrice:
       type: object
       properties:
@@ -377,14 +356,24 @@ components:
           example: SE
         value:
           $ref: '#/components/schemas/Money'
-    LocalizedText:
+    BulkResponse:
       type: object
       properties:
-        language:
+        description:
           type: string
-          example: en-US
-        value:
+          example: Accepted
+        responses:
+          type: array
+          items:
+            type: object
+    CreatedResponse:
+      type: object
+      properties:
+        id:
           type: string
+        description:
+          type: string
+          example: Article was created.
     Article:
       type: object
       properties:
@@ -450,24 +439,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ShippingTime'
-    CreatedResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        description:
-          type: string
-          example: Article was created.
-    BulkResponse:
-      type: object
-      properties:
-        description:
-          type: string
-          example: Accepted
-        responses:
-          type: array
-          items:
-            type: object
     Money:
       type: object
       properties:
@@ -477,6 +448,35 @@ components:
         currency:
           type: string
           example: SEK
+    LocalizedText:
+      type: object
+      properties:
+        language:
+          type: string
+          example: en-US
+        value:
+          type: string
+    ShippingTime:
+      type: object
+      properties:
+        market:
+          type: string
+          example: SE
+        min:
+          type: integer
+        max:
+          type: integer
+    Property:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+    PriceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MarketPrice'
   securitySchemes:
     basicAuth:
       type: http

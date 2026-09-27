@@ -147,56 +147,6 @@ paths:
                 $ref: '#/components/schemas/Message'
 components:
   schemas:
-    OrderMoney:
-      type: object
-      properties:
-        amount:
-          type: number
-        vat_amount:
-          type: number
-        vat_rate:
-          type: number
-        currency:
-          type: string
-          example: SEK
-    ShippingAddress:
-      type: object
-      properties:
-        first_name:
-          type: string
-        last_name:
-          type: string
-        street_address:
-          type: string
-        city:
-          type: string
-        postal_code:
-          type: string
-        country:
-          type: string
-        phone_number:
-          type: string
-    Message:
-      type: object
-      properties:
-        description:
-          type: string
-    CreatedResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        description:
-          type: string
-          example: Article was created.
-    TrackingInformation:
-      type: object
-      properties:
-        carrier_name:
-          type: string
-          example: Postnord
-        tracking_number:
-          type: string
     Order:
       type: object
       properties:
@@ -232,6 +182,56 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TrackingInformation'
+    CreatedResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+          example: Article was created.
+    TrackingInformation:
+      type: object
+      properties:
+        carrier_name:
+          type: string
+          example: Postnord
+        tracking_number:
+          type: string
+    OrderMoney:
+      type: object
+      properties:
+        amount:
+          type: number
+        vat_amount:
+          type: number
+        vat_rate:
+          type: number
+        currency:
+          type: string
+          example: SEK
+    Message:
+      type: object
+      properties:
+        description:
+          type: string
+    ShippingAddress:
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        street_address:
+          type: string
+        city:
+          type: string
+        postal_code:
+          type: string
+        country:
+          type: string
+        phone_number:
+          type: string
   securitySchemes:
     basicAuth:
       type: http
