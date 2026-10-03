@@ -147,6 +147,31 @@ paths:
                 $ref: '#/components/schemas/Message'
 components:
   schemas:
+    ShippingAddress:
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        street_address:
+          type: string
+        city:
+          type: string
+        postal_code:
+          type: string
+        country:
+          type: string
+        phone_number:
+          type: string
+    CreatedResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+          example: Article was created.
     Order:
       type: object
       properties:
@@ -182,22 +207,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TrackingInformation'
-    CreatedResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        description:
-          type: string
-          example: Article was created.
-    TrackingInformation:
-      type: object
-      properties:
-        carrier_name:
-          type: string
-          example: Postnord
-        tracking_number:
-          type: string
     OrderMoney:
       type: object
       properties:
@@ -210,27 +219,18 @@ components:
         currency:
           type: string
           example: SEK
+    TrackingInformation:
+      type: object
+      properties:
+        carrier_name:
+          type: string
+          example: Postnord
+        tracking_number:
+          type: string
     Message:
       type: object
       properties:
         description:
-          type: string
-    ShippingAddress:
-      type: object
-      properties:
-        first_name:
-          type: string
-        last_name:
-          type: string
-        street_address:
-          type: string
-        city:
-          type: string
-        postal_code:
-          type: string
-        country:
-          type: string
-        phone_number:
           type: string
   securitySchemes:
     basicAuth:

@@ -340,14 +340,6 @@ paths:
                   type: object
 components:
   schemas:
-    Error:
-      type: object
-      description: Standard Fyndiq error envelope. `errors` carries field-level detail.
-      properties:
-        description:
-          type: string
-        errors:
-          type: object
     MarketPrice:
       type: object
       properties:
@@ -356,24 +348,6 @@ components:
           example: SE
         value:
           $ref: '#/components/schemas/Money'
-    BulkResponse:
-      type: object
-      properties:
-        description:
-          type: string
-          example: Accepted
-        responses:
-          type: array
-          items:
-            type: object
-    CreatedResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        description:
-          type: string
-          example: Article was created.
     Article:
       type: object
       properties:
@@ -439,6 +413,43 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ShippingTime'
+    CreatedResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+          example: Article was created.
+    Property:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+    BulkResponse:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Accepted
+        responses:
+          type: array
+          items:
+            type: object
+    Error:
+      type: object
+      description: Standard Fyndiq error envelope. `errors` carries field-level detail.
+      properties:
+        description:
+          type: string
+        errors:
+          type: object
+    PriceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MarketPrice'
     Money:
       type: object
       properties:
@@ -448,14 +459,6 @@ components:
         currency:
           type: string
           example: SEK
-    LocalizedText:
-      type: object
-      properties:
-        language:
-          type: string
-          example: en-US
-        value:
-          type: string
     ShippingTime:
       type: object
       properties:
@@ -466,17 +469,14 @@ components:
           type: integer
         max:
           type: integer
-    Property:
+    LocalizedText:
       type: object
       properties:
-        name:
+        language:
           type: string
+          example: en-US
         value:
           type: string
-    PriceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MarketPrice'
   securitySchemes:
     basicAuth:
       type: http
