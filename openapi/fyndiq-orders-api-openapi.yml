@@ -147,6 +147,22 @@ paths:
                 $ref: '#/components/schemas/Message'
 components:
   schemas:
+    TrackingInformation:
+      type: object
+      properties:
+        carrier_name:
+          type: string
+          example: Postnord
+        tracking_number:
+          type: string
+    CreatedResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+          example: Article was created.
     ShippingAddress:
       type: object
       properties:
@@ -164,14 +180,23 @@ components:
           type: string
         phone_number:
           type: string
-    CreatedResponse:
+    Message:
       type: object
       properties:
-        id:
-          type: string
         description:
           type: string
-          example: Article was created.
+    OrderMoney:
+      type: object
+      properties:
+        amount:
+          type: number
+        vat_amount:
+          type: number
+        vat_rate:
+          type: number
+        currency:
+          type: string
+          example: SEK
     Order:
       type: object
       properties:
@@ -207,31 +232,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TrackingInformation'
-    OrderMoney:
-      type: object
-      properties:
-        amount:
-          type: number
-        vat_amount:
-          type: number
-        vat_rate:
-          type: number
-        currency:
-          type: string
-          example: SEK
-    TrackingInformation:
-      type: object
-      properties:
-        carrier_name:
-          type: string
-          example: Postnord
-        tracking_number:
-          type: string
-    Message:
-      type: object
-      properties:
-        description:
-          type: string
   securitySchemes:
     basicAuth:
       type: http

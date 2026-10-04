@@ -340,6 +340,24 @@ paths:
                   type: object
 components:
   schemas:
+    CreatedResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+          example: Article was created.
+    ShippingTime:
+      type: object
+      properties:
+        market:
+          type: string
+          example: SE
+        min:
+          type: integer
+        max:
+          type: integer
     MarketPrice:
       type: object
       properties:
@@ -348,6 +366,41 @@ components:
           example: SE
         value:
           $ref: '#/components/schemas/Money'
+    BulkResponse:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Accepted
+        responses:
+          type: array
+          items:
+            type: object
+    Error:
+      type: object
+      description: Standard Fyndiq error envelope. `errors` carries field-level detail.
+      properties:
+        description:
+          type: string
+        errors:
+          type: object
+    LocalizedText:
+      type: object
+      properties:
+        language:
+          type: string
+          example: en-US
+        value:
+          type: string
+    Money:
+      type: object
+      properties:
+        amount:
+          type: string
+          example: '50.00'
+        currency:
+          type: string
+          example: SEK
     Article:
       type: object
       properties:
@@ -413,68 +466,15 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ShippingTime'
-    CreatedResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        description:
-          type: string
-          example: Article was created.
+    PriceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MarketPrice'
     Property:
       type: object
       properties:
         name:
           type: string
-        value:
-          type: string
-    BulkResponse:
-      type: object
-      properties:
-        description:
-          type: string
-          example: Accepted
-        responses:
-          type: array
-          items:
-            type: object
-    Error:
-      type: object
-      description: Standard Fyndiq error envelope. `errors` carries field-level detail.
-      properties:
-        description:
-          type: string
-        errors:
-          type: object
-    PriceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MarketPrice'
-    Money:
-      type: object
-      properties:
-        amount:
-          type: string
-          example: '50.00'
-        currency:
-          type: string
-          example: SEK
-    ShippingTime:
-      type: object
-      properties:
-        market:
-          type: string
-          example: SE
-        min:
-          type: integer
-        max:
-          type: integer
-    LocalizedText:
-      type: object
-      properties:
-        language:
-          type: string
-          example: en-US
         value:
           type: string
   securitySchemes:
