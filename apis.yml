@@ -104,6 +104,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/fyndiq-capability-edges.yml
+  name: Fyndiq Business Capability Map
 - type: Overlay
   url: overlays/fyndiq-merchant-api-overlay.yaml
 - type: Website
