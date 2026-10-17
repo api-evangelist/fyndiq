@@ -155,31 +155,6 @@ components:
           example: Postnord
         tracking_number:
           type: string
-    CreatedResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        description:
-          type: string
-          example: Article was created.
-    ShippingAddress:
-      type: object
-      properties:
-        first_name:
-          type: string
-        last_name:
-          type: string
-        street_address:
-          type: string
-        city:
-          type: string
-        postal_code:
-          type: string
-        country:
-          type: string
-        phone_number:
-          type: string
     Message:
       type: object
       properties:
@@ -232,6 +207,31 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TrackingInformation'
+    ShippingAddress:
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        street_address:
+          type: string
+        city:
+          type: string
+        postal_code:
+          type: string
+        country:
+          type: string
+        phone_number:
+          type: string
+    CreatedResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+          example: Article was created.
   securitySchemes:
     basicAuth:
       type: http

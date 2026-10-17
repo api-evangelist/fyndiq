@@ -340,14 +340,6 @@ paths:
                   type: object
 components:
   schemas:
-    CreatedResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        description:
-          type: string
-          example: Article was created.
     ShippingTime:
       type: object
       properties:
@@ -358,14 +350,13 @@ components:
           type: integer
         max:
           type: integer
-    MarketPrice:
+    Property:
       type: object
       properties:
-        market:
+        name:
           type: string
-          example: SE
         value:
-          $ref: '#/components/schemas/Money'
+          type: string
     BulkResponse:
       type: object
       properties:
@@ -376,6 +367,18 @@ components:
           type: array
           items:
             type: object
+    MarketPrice:
+      type: object
+      properties:
+        market:
+          type: string
+          example: SE
+        value:
+          $ref: '#/components/schemas/Money'
+    PriceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MarketPrice'
     Error:
       type: object
       description: Standard Fyndiq error envelope. `errors` carries field-level detail.
@@ -384,14 +387,6 @@ components:
           type: string
         errors:
           type: object
-    LocalizedText:
-      type: object
-      properties:
-        language:
-          type: string
-          example: en-US
-        value:
-          type: string
     Money:
       type: object
       properties:
@@ -401,6 +396,14 @@ components:
         currency:
           type: string
           example: SEK
+    CreatedResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+          example: Article was created.
     Article:
       type: object
       properties:
@@ -466,15 +469,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ShippingTime'
-    PriceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MarketPrice'
-    Property:
+    LocalizedText:
       type: object
       properties:
-        name:
+        language:
           type: string
+          example: en-US
         value:
           type: string
   securitySchemes:
