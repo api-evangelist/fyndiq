@@ -98,6 +98,97 @@ apis:
     url: https://merchantapi.fyndiq.com/
   - type: Documentation
     url: https://developers.fyndiq.com/
+- aid: fyndiq:fyndiq-carrier-codes-api
+  name: Fyndiq Carrier Codes API
+  description: The Carrier Codes API from Fyndiq — 1 operation(s) for carrier codes.
+  humanURL: https://developers.fyndiq.com/
+  baseURL: https://merchants-api.fyndiq.se/api/v1
+  tags:
+  - Carrier Codes
+  properties:
+  - type: OpenAPI
+    url: openapi/fyndiq-carrier-codes-api-openapi.yml
+- aid: fyndiq:fyndiq-categories-api
+  name: Fyndiq Categories API
+  description: The Categories API from Fyndiq — 1 operation(s) for categories.
+  humanURL: https://developers.fyndiq.com/
+  baseURL: https://merchants-api.fyndiq.se/api/v1
+  tags:
+  - Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/fyndiq-categories-api-openapi.yml
+- aid: fyndiq:fyndiq-financial-reports-api
+  name: Fyndiq Financial Reports API
+  description: The Financial Reports API from Fyndiq — 1 operation(s) for financial reports.
+  humanURL: https://developers.fyndiq.com/
+  baseURL: https://merchants-api.fyndiq.se/api/v1
+  tags:
+  - Financial Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/fyndiq-financial-reports-api-openapi.yml
+- aid: fyndiq:fyndiq-health-api
+  name: Fyndiq Health API
+  description: The Health API from Fyndiq — 1 operation(s) for health.
+  humanURL: https://developers.fyndiq.com/
+  baseURL: https://merchants-api.fyndiq.se/api/v1
+  tags:
+  - Health
+  properties:
+  - type: OpenAPI
+    url: openapi/fyndiq-health-api-openapi.yml
+- aid: fyndiq:fyndiq-jobs-api
+  name: Fyndiq Jobs API
+  description: The Jobs API from Fyndiq — 2 operation(s) for jobs.
+  humanURL: https://developers.fyndiq.com/
+  baseURL: https://merchants-api.fyndiq.se/api/v1
+  tags:
+  - Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/fyndiq-jobs-api-openapi.yml
+- aid: fyndiq:fyndiq-merchant-api
+  name: Fyndiq Merchant API
+  description: The Merchant API from Fyndiq — 4 operation(s) for merchant.
+  humanURL: https://developers.fyndiq.com/
+  baseURL: https://merchants-api.fyndiq.se/api/v1
+  tags:
+  - Merchant
+  properties:
+  - type: OpenAPI
+    url: openapi/fyndiq-merchant-api-openapi.yml
+- aid: fyndiq:fyndiq-sales-funnels-api
+  name: Fyndiq Sales Funnels API
+  description: The Sales Funnels API from Fyndiq — 1 operation(s) for sales funnels.
+  humanURL: https://developers.fyndiq.com/
+  baseURL: https://merchants-api.fyndiq.se/api/v1
+  tags:
+  - Sales Funnels
+  properties:
+  - type: OpenAPI
+    url: openapi/fyndiq-sales-funnels-api-openapi.yml
+- aid: fyndiq:fyndiq-shipping-configurations-api
+  name: Fyndiq Shipping Configurations API
+  description: >-
+    The Shipping Configurations API from Fyndiq — 2 operation(s) for shipping configurations.
+  humanURL: https://developers.fyndiq.com/
+  baseURL: https://merchants-api.fyndiq.se/api/v1
+  tags:
+  - Shipping Configurations
+  properties:
+  - type: OpenAPI
+    url: openapi/fyndiq-shipping-configurations-api-openapi.yml
+- aid: fyndiq:fyndiq-statuses-api
+  name: Fyndiq Statuses API
+  description: The Statuses API from Fyndiq — 2 operation(s) for statuses.
+  humanURL: https://developers.fyndiq.com/
+  baseURL: https://merchants-api.fyndiq.se/api/v1
+  tags:
+  - Statuses
+  properties:
+  - type: OpenAPI
+    url: openapi/fyndiq-statuses-api-openapi.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

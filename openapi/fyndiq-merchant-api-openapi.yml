@@ -1,0 +1,339 @@
+openapi: 3.2.0
+info:
+  title: gateway service Merchant API
+  version: 0.1.0
+tags:
+- name: Merchant
+paths:
+  /api/v1/merchant:
+    patch:
+      summary: Update Merchant Contact
+      operationId: update_merchant_contact_api_v1_merchant_patch
+      parameters:
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              title: Payload
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Merchant
+    get:
+      summary: Get Merchant Contact
+      operationId: get_merchant_contact_api_v1_merchant_get
+      parameters:
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Merchant
+  /api/v1/merchant/bank-data:
+    get:
+      summary: Get Merchant Bank Data
+      operationId: get_merchant_bank_data_api_v1_merchant_bank_data_get
+      parameters:
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Merchant
+  /api/v1/merchant/pending-bank-data:
+    get:
+      summary: Get Merchant Pending Bank Data
+      operationId: get_merchant_pending_bank_data_api_v1_merchant_pending_bank_data_get
+      parameters:
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Merchant
+    post:
+      summary: Submit Merchant Bank Data For Approval
+      operationId: submit_merchant_bank_data_for_approval_api_v1_merchant_pending_bank_data_post
+      parameters:
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              title: Payload
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Merchant
+  /api/v1/merchant/dac7:
+    get:
+      summary: Get Merchant Dac7
+      operationId: get_merchant_dac7_api_v1_merchant_dac7_get
+      parameters:
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Merchant
+    post:
+      summary: Create Merchant Dac7
+      operationId: create_merchant_dac7_api_v1_merchant_dac7_post
+      parameters:
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              title: Payload
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Merchant
+    put:
+      summary: Update Merchant Dac7
+      operationId: update_merchant_dac7_api_v1_merchant_dac7_put
+      parameters:
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              title: Payload
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Merchant
+components:
+  schemas:
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError

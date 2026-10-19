@@ -1,0 +1,240 @@
+openapi: 3.2.0
+info:
+  title: merchant api gateway service Shipping Configurations API
+  version: 0.1.0
+tags:
+- name: Shipping Configurations
+paths:
+  /api/v1/shipping-configurations:
+    post:
+      summary: Create Shipping Configuration
+      operationId: create_shipping_configuration_api_v1_shipping_configurations_post
+      parameters:
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              title: Payload
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Shipping Configurations
+    get:
+      summary: List Shipping Configurations
+      operationId: list_shipping_configurations_api_v1_shipping_configurations_get
+      parameters:
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Shipping Configurations
+  /api/v1/shipping-configurations/{config_id}:
+    get:
+      summary: Get Shipping Configuration
+      operationId: get_shipping_configuration_api_v1_shipping_configurations__config_id__get
+      parameters:
+      - name: config_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Config Id
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Shipping Configurations
+    patch:
+      summary: Update Shipping Configuration
+      operationId: update_shipping_configuration_api_v1_shipping_configurations__config_id__patch
+      parameters:
+      - name: config_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Config Id
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              title: Payload
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Shipping Configurations
+    delete:
+      summary: Delete Shipping Configuration
+      operationId: delete_shipping_configuration_api_v1_shipping_configurations__config_id__delete
+      parameters:
+      - name: config_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Config Id
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Shipping Configurations
+components:
+  schemas:
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError

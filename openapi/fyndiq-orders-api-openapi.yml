@@ -1,239 +1,292 @@
 openapi: 3.2.0
 info:
-  title: Fyndiq Merchant Orders API
-  version: v1
-  description: The Fyndiq Merchant API enables merchants to upload and manage products (articles) and to retrieve and fulfil orders on the Fyndiq marketplace, Sweden's largest marketplace for bargains. The API is REST-oriented, uses JSON request and response bodies, and is protected with HTTP Basic Authentication (Base64-encoded `merchantID:token`). A self-contained sandbox environment mirrors production for integration testing.
-  contact:
-    name: Fyndiq Merchant Help Center
-    url: https://support.fyndiq.se/hc/
-  x-provenance:
-    generated: '2026-07-19'
-    method: derived
-    source: https://merchantapi.fyndiq.com (public Postman collection 2328684/7185ENK)
-    note: Faithfully reconstructed from Fyndiq's published Merchant API Postman documentation. Schemas reflect the documented request/response examples; Fyndiq does not publish an OpenAPI document.
-servers:
-- url: https://merchants-api.fyndiq.se/api/v1
-  description: Production
-- url: https://merchants-api.sandbox.fyndiq.se/api/v1
-  description: Sandbox (credentials provided on request)
-security:
-- basicAuth: []
+  title: merchant api gateway service Orders API
+  version: 0.1.0
 tags:
 - name: Orders
-  description: Retrieve, fulfil and cancel marketplace orders.
 paths:
-  /orders:
-    get:
-      operationId: listOrders
-      tags:
-      - Orders
-      summary: List orders
-      description: Retrieve your order data. The `state` field supports filtering; by default new orders are returned.
+  /api/v1/orders:
+    post:
+      summary: Create Order
+      operationId: create_order_api_v1_orders_post
       parameters:
-      - name: state
-        in: query
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
         required: false
         schema:
           type: string
-          enum:
-          - CREATED
-          - FULFILLED
-          - CANCELLED
-        description: Filter orders by state.
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Order'
-    post:
-      operationId: createTestOrder
-      tags:
-      - Orders
-      summary: Create a test order
-      description: Create a test order in the sandbox. This endpoint is NOT available in the production environment.
-      responses:
-        '200':
-          description: Order was created
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreatedResponse'
-  /orders/{order_id}:
-    parameters:
-    - name: order_id
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Fyndiq unique ID for the order.
-    get:
-      operationId: retrieveOrder
-      tags:
-      - Orders
-      summary: Retrieve an order
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Order'
-  /orders/{order_id}/fulfill:
-    parameters:
-    - name: order_id
-      in: path
-      required: true
-      schema:
-        type: string
-    put:
-      operationId: fulfillOrder
-      tags:
-      - Orders
-      summary: Fulfil an order
-      description: Mark the order as handled once you have shipped the item; include tracking information.
+          default: ''
+          title: X-Client-Name
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              properties:
-                tracking_information:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/TrackingInformation'
+              additionalProperties: true
+              title: Payload
       responses:
-        '202':
-          description: Order row was fulfilled
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Message'
-        '403':
-          description: Order cannot be fulfilled (already fulfilled/cancelled or past deadline)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Message'
-  /orders/{order_id}/cancel:
-    parameters:
-    - name: order_id
-      in: path
-      required: true
-      schema:
-        type: string
-    put:
-      operationId: cancelOrder
+                $ref: '#/components/schemas/HTTPValidationError'
       tags:
       - Orders
-      summary: Cancel an order
-      description: Cancel an order when you are unable to ship the item (e.g. stock issue).
+    get:
+      summary: Get All Orders
+      operationId: get_all_orders_api_v1_orders_get
+      parameters:
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
       responses:
-        '202':
-          description: Order row was cancelled
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Message'
-        '403':
-          description: Order cannot be cancelled (already fulfilled/cancelled)
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Orders
+  /api/v1/orders/{order_id}:
+    get:
+      summary: Get Order
+      operationId: get_order_api_v1_orders__order_id__get
+      parameters:
+      - name: order_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Order Id
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Message'
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Orders
+  /api/v1/orders/{article_row_id}/fulfill:
+    put:
+      summary: Fulfill Order
+      operationId: fulfill_order_api_v1_orders__article_row_id__fulfill_put
+      parameters:
+      - name: article_row_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Article Row Id
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      requestBody:
+        content:
+          application/json:
+            schema:
+              anyOf:
+              - type: object
+                additionalProperties: true
+              - type: 'null'
+              title: Payload
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Orders
+  /api/v1/orders/{article_row_id}/cancel:
+    put:
+      summary: Cancel Order
+      operationId: cancel_order_api_v1_orders__article_row_id__cancel_put
+      parameters:
+      - name: article_row_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Article Row Id
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      requestBody:
+        content:
+          application/json:
+            schema:
+              anyOf:
+              - type: object
+                additionalProperties: true
+              - type: 'null'
+              title: Payload
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Orders
+  /api/v1/orders/{article_row_id}/accept:
+    put:
+      summary: Accept Order
+      operationId: accept_order_api_v1_orders__article_row_id__accept_put
+      parameters:
+      - name: article_row_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Article Row Id
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Orders
 components:
   schemas:
-    TrackingInformation:
-      type: object
+    ValidationError:
       properties:
-        carrier_name:
-          type: string
-          example: Postnord
-        tracking_number:
-          type: string
-    Message:
-      type: object
-      properties:
-        description:
-          type: string
-    OrderMoney:
-      type: object
-      properties:
-        amount:
-          type: number
-        vat_amount:
-          type: number
-        vat_rate:
-          type: number
-        currency:
-          type: string
-          example: SEK
-    Order:
-      type: object
-      properties:
-        id:
-          type: string
-        article_id:
-          type: string
-        title:
-          type: string
-        article_sku:
-          type: string
-        price:
-          $ref: '#/components/schemas/OrderMoney'
-        total_price:
-          $ref: '#/components/schemas/OrderMoney'
-        quantity:
-          type: integer
-        shipping_address:
-          $ref: '#/components/schemas/ShippingAddress'
-        market:
-          type: string
-          example: SE
-        state:
-          type: string
-          example: CREATED
-        created_at:
-          type: string
-        updated_at:
-          type: string
-        fulfillment_deadline:
-          type: string
-        tracking_information:
-          type: array
+        loc:
           items:
-            $ref: '#/components/schemas/TrackingInformation'
-    ShippingAddress:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
       type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    HTTPValidationError:
       properties:
-        first_name:
-          type: string
-        last_name:
-          type: string
-        street_address:
-          type: string
-        city:
-          type: string
-        postal_code:
-          type: string
-        country:
-          type: string
-        phone_number:
-          type: string
-    CreatedResponse:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
       type: object
-      properties:
-        id:
-          type: string
-        description:
-          type: string
-          example: Article was created.
-  securitySchemes:
-    basicAuth:
-      type: http
-      scheme: basic
-      description: Base64-encoded `merchantID:token`.
+      title: HTTPValidationError

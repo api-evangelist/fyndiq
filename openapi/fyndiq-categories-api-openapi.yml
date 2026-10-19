@@ -1,0 +1,85 @@
+openapi: 3.2.0
+info:
+  title: merchant api gateway service Categories API
+  version: 0.1.0
+tags:
+- name: Categories
+paths:
+  /api/v1/categories/{market}/{language}:
+    get:
+      summary: Get All Categories
+      operationId: get_all_categories_api_v1_categories__market___language__get
+      parameters:
+      - name: market
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Market
+      - name: language
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Language
+      - name: authorization
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization
+      - name: X-Client-Name
+        in: header
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: X-Client-Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Categories
+components:
+  schemas:
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
