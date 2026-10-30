@@ -64,6 +64,117 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Fyndiq is a company surfaced as a portfolio company of northzone and added to the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.
+Fyndiq is Sweden's largest online marketplace for bargains and deals, connecting merchants with millions of deal-seeking consumers across categories from electronics and mobile accessories to home, fashion, beauty and children's goods. Merchants list products while Fyndiq handles the storefront, customer relations and payments. Fyndiq exposes a REST Merchant API that lets sellers upload and manage product articles (create, bulk, price, quantity, delete) and retrieve, fulfil and cancel orders. The API is JSON over HTTPS, secured with HTTP Basic Authentication (Base64 merchantID:token), with a self-contained sandbox environment for integration testing and official Magento, PrestaShop and WooCommerce integration modules. Fyndiq is part of the CDON marketplace group and was originally backed by Northzone.
 
-Backed by: northzone — http://www.fyndiq.se
+**Areas:** Company · Consumer · Marketplace · E-Commerce · Retail · Product · Order · Sweden
+
+## Fyndiq on APIs.io
+
+Everything profiled for Fyndiq is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/fyndiq/](https://apis.io/providers/fyndiq/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [Fyndiq Articles API](https://apis.io/apis/fyndiq/fyndiq-articles-api/) — Create, update, retrieve and delete product articles.
+- [Fyndiq Orders API](https://apis.io/apis/fyndiq/fyndiq-orders-api/) — Retrieve, fulfil and cancel marketplace orders.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [fyndiq-merchant](https://apis.io/servers/fyndiq/fyndiq-merchant/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Fyndiq Agentic Access](https://apis.io/agentic-access/fyndiq/fyndiq-agentic-access/)
+
+#### Collections (3)
+
+Postman and Open Collection request collections.
+
+- [Fyndiq Merchant Articles API](https://apis.io/collections/fyndiq/open-fyndiq-articles-api/)
+- [Fyndiq Merchant Articles Orders API](https://apis.io/collections/fyndiq/open-fyndiq-orders-api/)
+- [NEW FYNDIQ API](https://apis.io/collections/fyndiq/postman-fyndiq-merchant-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Fyndiq Merchant Api Overlay](https://apis.io/overlays/fyndiq/fyndiq-merchant-api-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Fyndiq Authentication](https://apis.io/security/fyndiq/fyndiq-authentication/)
+- [Fyndiq Domain Security](https://apis.io/security/fyndiq/fyndiq-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.fyndiq.se)
+- [Documentation](https://developers.fyndiq.com/)
+- [API reference](https://merchantapi.fyndiq.com/)
+- [Support](https://support.fyndiq.se/hc/)
+- [Terms of service](https://fyndiq.se/fyndiq/policy-och-villkor/)
+- [Privacy policy](https://fyndiq.se/fyndiq/policy-och-villkor/)
+- [GitHub](https://github.com/fyndiq)
+
+## API Evangelist rating
+
+**Kin Score 28.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 3.4 |
+| Contract governance | 4.5 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 63.7 |
+| Access clarity | 27.6 |
+
+**Agent readiness 25.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/fyndiq/](https://apis.io/providers/fyndiq/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Fyndiq: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/fyndiq/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
